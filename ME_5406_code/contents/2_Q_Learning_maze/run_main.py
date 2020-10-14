@@ -89,7 +89,8 @@ if __name__ == "__main__":
     # # print(RL.q_table.loc["test_1", :].to_numpy().argmax())
     # print(RL.q_table.to_numpy())
 
-    parameters = [1, 0.1]
+    parameters = [1, 0.1, 0.01]
+    para_name = "lr_"
     reward_list = []
     value_list = []
     for para in parameters:
@@ -98,7 +99,7 @@ if __name__ == "__main__":
         RL = SarsaTable(actions=list(range(env.n_actions)),
                         states=list(range(env.n_states)),
                         learning_rate=para, reward_decay=0.9, e_greedy=0.9)
-        reward, value = run(RL, numEpisode=5)
+        reward, value = run(RL, numEpisode=100)
         reward_list.append(cp.deepcopy(reward))
         value_list.append(cp.deepcopy(value))
 
@@ -125,7 +126,7 @@ if __name__ == "__main__":
     fig = plt.figure()
     plt.title('Q-learning')
     for index, reward in enumerate(reward_list):
-        plt.plot(np.array(reward), label='para' + str(index))
+        plt.plot(np.array(reward), label=para_name + str(index))
     plt.savefig("1-figure/Q-learning-reward.png")
     plt.xlabel('Episodes')
     plt.ylabel('Episode Reward')

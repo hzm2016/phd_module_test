@@ -2,26 +2,33 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 # matplotlib inline
 # from mpl_toolkits.mplot3d import Axes3D
-FONT_SIZE = 28
+FONT_SIZE = 16
 # plt.rcParams['pdf.fonttype'] = FONT_SIZE
 
 
-def plt_q_table(value):
+def plt_q_table(value, name=None):
 	fig = plt.figure(figsize=(10, 10))
-	plt.title("State-action Value (Q)")
+	plt.title("State-action Value (Q)", fontsize=FONT_SIZE)
 	print("value :::", value)
-	ax_1 = sns.heatmap(value, square=True, cbar=True, annot=True)
-
+	h = sns.heatmap(value, square=True, cbar=False, annot=True)
+	cb = h.figure.colorbar(h.collections[0])
+	cb.ax.tick_params(labelsize=FONT_SIZE)
+	plt.xticks(fontsize=FONT_SIZE)
+	plt.xticks(fontsize=FONT_SIZE)
+	plt.savefig("1-figure" + "/" + name + ".png")
 	plt.show()
 
 
-def plt_state_value_table(value):
+def plt_state_value_table(value, name=None):
 	fig = plt.figure(figsize=(10, 10))
 	plt.title("State Value (V)", fontsize=FONT_SIZE)
 	print("value :::", value)
-	ax_1 = sns.heatmap(value, square=True, annot=True)
+	h = sns.heatmap(value, square=True, cbar=False, annot=True)
+	cb = h.figure.colorbar(h.collections[0])
+	cb.ax.tick_params(labelsize=FONT_SIZE)
 	plt.xticks(fontsize=FONT_SIZE)
 	plt.xticks(fontsize=FONT_SIZE)
+	plt.savefig("1-figure" + "/" + name + ".png")
 	plt.show()
 
 

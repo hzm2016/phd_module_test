@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ecb2e403-d839-4445-8dd0-ae3bc80d55fc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/result_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/result_analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/run_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/run_main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,7 +14,7 @@
     <SUITE FILE_PATH="coverage/phd_module_code$maze_env.coverage" NAME="maze_env Coverage Results" MODIFIED="1602596141776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze" />
     <SUITE FILE_PATH="coverage/phd_module_code$RL_brain.coverage" NAME="RL_brain Coverage Results" MODIFIED="1602405191738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze" />
     <SUITE FILE_PATH="coverage/phd_module_code$run_this__1_.coverage" NAME="run_this (1) Coverage Results" MODIFIED="1602464340164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ME_5406_code/contents/3_Sarsa_maze" />
-    <SUITE FILE_PATH="coverage/phd_module_code$run_main.coverage" NAME="run_main Coverage Results" MODIFIED="1602681955908" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze" />
+    <SUITE FILE_PATH="coverage/phd_module_code$run_main.coverage" NAME="run_main Coverage Results" MODIFIED="1602688744676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze" />
     <SUITE FILE_PATH="coverage/phd_module_code$result_analysis.coverage" NAME="result_analysis Coverage Results" MODIFIED="1602685030565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze" />
     <SUITE FILE_PATH="coverage/phd_module_code$monte_carlo_without_es.coverage" NAME="monte_carlo_without_es Coverage Results" MODIFIED="1602555296543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze" />
     <SUITE FILE_PATH="coverage/phd_module_code$monte_carlo.coverage" NAME="monte_carlo Coverage Results" MODIFIED="1602422726229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze" />
@@ -34,30 +34,30 @@
         <counts>
           <entry key="md" value="1" />
           <entry key="png" value="1" />
-          <entry key="py" value="20" />
+          <entry key="py" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="1" />
           <entry key="Markdown" value="1" />
-          <entry key="Python" value="20" />
+          <entry key="Python" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="5653" />
+          <entry key="py" value="6186" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="5653" />
+          <entry key="Python" value="6186" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.56449634">
+    <splitter split-orientation="horizontal" split-proportion="0.6202771">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -111,8 +111,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/run_main.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-957">
-                  <caret line="14" column="15" lean-forward="true" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+                <state relative-caret-position="223">
+                  <caret line="102" column="45" lean-forward="true" selection-start-line="102" selection-start-column="45" selection-end-line="102" selection-end-column="45" />
                   <folding>
                     <element signature="e#46#71#0" expanded="true" />
                   </folding>
@@ -154,8 +154,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/all_algorithms.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="649">
-                  <caret line="80" column="13" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="13" />
+                <state relative-caret-position="176">
+                  <caret line="72" column="31" lean-forward="true" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
                   <folding>
                     <element signature="e#186#204#0" expanded="true" />
                   </folding>
@@ -183,12 +183,12 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/result_analysis.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="204">
-                  <caret line="12" column="56" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
+                <state relative-caret-position="270">
+                  <caret line="17" column="25" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="25" />
                   <folding>
                     <element signature="e#1#22#0" expanded="true" />
-                    <marker date="1602686292550" expanded="true" signature="199:200" ph="..." />
-                    <marker date="1602686292550" expanded="true" signature="432:433" ph="..." />
+                    <marker date="1602687314488" expanded="true" signature="210:211" ph="..." />
+                    <marker date="1602687314488" expanded="true" signature="643:644" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -252,8 +252,8 @@
         <option value="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/run_this.py" />
         <option value="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/algorithms.py" />
         <option value="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/all_algorithms.py" />
-        <option value="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/run_main.py" />
         <option value="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/result_analysis.py" />
+        <option value="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/run_main.py" />
       </list>
     </option>
   </component>
@@ -286,6 +286,27 @@
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="ME_5406_code" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
+            <path>
+              <item name="phd_module_code" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="ME_5406_code" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="contents" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="phd_module_code" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="ME_5406_code" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="contents" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="2_Q_Learning_maze" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="phd_module_code" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="ME_5406_code" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="contents" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="2_Q_Learning_maze" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="1-figure" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -316,7 +337,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.result_analysis">
+  <component name="RunManager" selected="Python.run_main">
     <configuration name="maze_env" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Module_PR_code" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -436,8 +457,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.result_analysis" />
         <item itemvalue="Python.run_main" />
+        <item itemvalue="Python.result_analysis" />
         <item itemvalue="Python.run_this" />
         <item itemvalue="Python.maze_env" />
         <item itemvalue="Python.monte_carlo_without_es" />
@@ -462,12 +483,12 @@
     <frame x="-1920" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.0" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1544196" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.42673266" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36237624" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -476,12 +497,12 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.15247525" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.38118812" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" visible="true" weight="0.13312034" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.13312034" />
       <window_info anchor="right" id="Database" order="4" />
     </layout>
   </component>
@@ -602,30 +623,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/all_algorithms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="649">
-          <caret line="80" column="13" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="13" />
+        <state relative-caret-position="176">
+          <caret line="72" column="31" lean-forward="true" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
           <folding>
             <element signature="e#186#204#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/miniconda3/envs/tensorflow/lib/python3.6/site-packages/seaborn/matrix.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="516" selection-start-line="516" selection-end-line="516" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/result_analysis.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="56" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
+        <state relative-caret-position="270">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="25" />
           <folding>
             <element signature="e#1#22#0" expanded="true" />
-            <marker date="1602686292550" expanded="true" signature="199:200" ph="..." />
-            <marker date="1602686292550" expanded="true" signature="432:433" ph="..." />
+            <marker date="1602687314488" expanded="true" signature="210:211" ph="..." />
+            <marker date="1602687314488" expanded="true" signature="643:644" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/run_main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-957">
-          <caret line="14" column="15" lean-forward="true" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+        <state relative-caret-position="223">
+          <caret line="102" column="45" lean-forward="true" selection-start-line="102" selection-start-column="45" selection-end-line="102" selection-end-column="45" />
           <folding>
             <element signature="e#46#71#0" expanded="true" />
           </folding>

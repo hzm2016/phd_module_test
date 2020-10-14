@@ -14,7 +14,7 @@ def plt_q_table(value, name=None):
 	cb = h.figure.colorbar(h.collections[0])
 	cb.ax.tick_params(labelsize=FONT_SIZE)
 	plt.xticks(fontsize=FONT_SIZE)
-	plt.xticks(fontsize=FONT_SIZE)
+	plt.yticks(fontsize=FONT_SIZE)
 	plt.savefig("1-figure" + "/" + name + ".png")
 	plt.show()
 
@@ -27,7 +27,7 @@ def plt_state_value_table(value, name=None):
 	cb = h.figure.colorbar(h.collections[0])
 	cb.ax.tick_params(labelsize=FONT_SIZE)
 	plt.xticks(fontsize=FONT_SIZE)
-	plt.xticks(fontsize=FONT_SIZE)
+	plt.yticks(fontsize=FONT_SIZE)
 	plt.savefig("1-figure" + "/" + name + ".png")
 	plt.show()
 

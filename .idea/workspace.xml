@@ -2,6 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ecb2e403-d839-4445-8dd0-ae3bc80d55fc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/1-figure/Q-learning-reward.png" beforeDir="false" afterPath="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/1-figure/Q-learning-reward.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/1-figure/state_action_value0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/1-figure/state_action_value0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/1-figure/state_value0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/1-figure/state_value0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/algorithms.py" beforeDir="false" afterPath="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/algorithms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/all_algorithms.py" beforeDir="false" afterPath="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/all_algorithms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/heatmap.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/run_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/run_main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,7 +21,7 @@
     <SUITE FILE_PATH="coverage/phd_module_code$maze_env.coverage" NAME="maze_env Coverage Results" MODIFIED="1602596141776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze" />
     <SUITE FILE_PATH="coverage/phd_module_code$RL_brain.coverage" NAME="RL_brain Coverage Results" MODIFIED="1602405191738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze" />
     <SUITE FILE_PATH="coverage/phd_module_code$run_this__1_.coverage" NAME="run_this (1) Coverage Results" MODIFIED="1602464340164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ME_5406_code/contents/3_Sarsa_maze" />
-    <SUITE FILE_PATH="coverage/phd_module_code$run_main.coverage" NAME="run_main Coverage Results" MODIFIED="1602688744676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze" />
+    <SUITE FILE_PATH="coverage/phd_module_code$run_main.coverage" NAME="run_main Coverage Results" MODIFIED="1602750422264" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze" />
     <SUITE FILE_PATH="coverage/phd_module_code$result_analysis.coverage" NAME="result_analysis Coverage Results" MODIFIED="1602685030565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze" />
     <SUITE FILE_PATH="coverage/phd_module_code$monte_carlo_without_es.coverage" NAME="monte_carlo_without_es Coverage Results" MODIFIED="1602555296543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze" />
     <SUITE FILE_PATH="coverage/phd_module_code$monte_carlo.coverage" NAME="monte_carlo Coverage Results" MODIFIED="1602422726229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze" />
@@ -27,7 +34,8 @@
           <entry key="project.closed" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -46,24 +54,24 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="6186" />
+          <entry key="py" value="6750" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="6186" />
+          <entry key="Python" value="6750" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6202771">
+    <splitter split-orientation="horizontal" split-proportion="0.62665737">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/3_Sarsa_maze/RL_brain.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-461">
+                <state relative-caret-position="170">
                   <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
                   <folding>
                     <element signature="e#187#205#0" expanded="true" />
@@ -87,7 +95,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/3_Sarsa_maze/run_this.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="476">
+                <state relative-caret-position="459">
                   <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
                   <folding>
                     <element signature="e#358#383#0" expanded="true" />
@@ -99,11 +107,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/run_this.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="657">
+                <state relative-caret-position="629">
                   <caret line="44" selection-start-line="44" selection-end-line="44" />
-                  <folding>
-                    <element signature="e#411#436#0" expanded="true" />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -111,8 +116,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/run_main.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="223">
-                  <caret line="102" column="45" lean-forward="true" selection-start-line="102" selection-start-column="45" selection-end-line="102" selection-end-column="45" />
+                <state relative-caret-position="537">
+                  <caret line="128" column="28" selection-start-line="128" selection-start-column="28" selection-end-line="128" selection-end-column="28" />
                   <folding>
                     <element signature="e#46#71#0" expanded="true" />
                   </folding>
@@ -127,11 +132,10 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/maze_env.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="165">
+                <state relative-caret-position="1955">
                   <caret line="115" selection-start-line="115" selection-end-line="115" />
                   <folding>
                     <element signature="e#52#70#0" expanded="true" />
-                    <element signature="e#1998#3099#0" />
                     <marker date="1602676158269" expanded="true" signature="6820:7090" ph="..." />
                     <marker date="1602676158269" expanded="true" signature="7107:7116" ph="..." />
                   </folding>
@@ -142,20 +146,17 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/algorithms.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-69">
-                  <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-                  <folding>
-                    <element signature="e#187#205#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="388">
+                  <caret line="45" column="70" lean-forward="true" selection-start-line="45" selection-start-column="48" selection-end-line="45" selection-end-column="70" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/all_algorithms.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="176">
-                  <caret line="72" column="31" lean-forward="true" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
+                <state relative-caret-position="306">
+                  <caret line="40" column="48" lean-forward="true" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
                   <folding>
                     <element signature="e#186#204#0" expanded="true" />
                   </folding>
@@ -166,8 +167,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/monte_carlo_without_es.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="111">
-                  <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="195" selection-end-column="51" />
+                <state relative-caret-position="51">
+                  <caret line="7" selection-start-line="7" selection-end-line="195" selection-end-column="51" />
                   <folding>
                     <element signature="e#0#18#0" expanded="true" />
                     <element signature="e#397#3562#0" />
@@ -180,15 +181,14 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/result_analysis.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="17" column="25" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="25" />
+                <state relative-caret-position="255">
+                  <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
                   <folding>
-                    <element signature="e#1#22#0" expanded="true" />
-                    <marker date="1602687314488" expanded="true" signature="210:211" ph="..." />
-                    <marker date="1602687314488" expanded="true" signature="643:644" ph="..." />
+                    <marker date="1602688829350" expanded="true" signature="210:211" ph="..." />
+                    <marker date="1602688829350" expanded="true" signature="643:644" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -197,8 +197,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/RL_brain.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="233">
-                  <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
+                <state relative-caret-position="301">
+                  <caret line="35" column="42" lean-forward="true" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="92" />
                   <folding>
                     <element signature="e#187#205#0" expanded="true" />
                   </folding>
@@ -250,9 +250,9 @@
         <option value="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/RL_brain.py" />
         <option value="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/maze_env.py" />
         <option value="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/run_this.py" />
+        <option value="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/result_analysis.py" />
         <option value="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/algorithms.py" />
         <option value="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/all_algorithms.py" />
-        <option value="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/result_analysis.py" />
         <option value="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/run_main.py" />
       </list>
     </option>
@@ -298,14 +298,6 @@
               <item name="ME_5406_code" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="contents" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="2_Q_Learning_maze" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="phd_module_code" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="ME_5406_code" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="contents" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="2_Q_Learning_maze" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="1-figure" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -483,12 +475,12 @@
     <frame x="-1920" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1544196" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.0" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36237624" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.087128714" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -497,12 +489,12 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.38118812" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.2253012" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" weight="0.13312034" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.23695421" />
       <window_info anchor="right" id="Database" order="4" />
     </layout>
   </component>
@@ -530,9 +522,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/heatmap.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$USER_HOME$/miniconda3/envs/tensorflow/lib/python3.6/site-packages/seaborn/matrix.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="516" selection-start-line="516" selection-end-line="516" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/3_Sarsa_maze/RL_brain.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-461">
+        <state relative-caret-position="170">
           <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
           <folding>
             <element signature="e#187#205#0" expanded="true" />
@@ -550,25 +552,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/maze_env.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="115" selection-start-line="115" selection-end-line="115" />
-          <folding>
-            <element signature="e#52#70#0" expanded="true" />
-            <element signature="e#1998#3099#0" />
-            <marker date="1602676158269" expanded="true" signature="6820:7090" ph="..." />
-            <marker date="1602676158269" expanded="true" signature="7107:7116" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/heatmap.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/3_Sarsa_maze/run_this.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
+        <state relative-caret-position="459">
           <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
           <folding>
             <element signature="e#358#383#0" expanded="true" />
@@ -576,40 +562,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/RL_brain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
-          <folding>
-            <element signature="e#187#205#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/algorithms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-69">
-          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-          <folding>
-            <element signature="e#187#205#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/run_this.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="657">
+        <state relative-caret-position="629">
           <caret line="44" selection-start-line="44" selection-end-line="44" />
-          <folding>
-            <element signature="e#411#436#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/monte_carlo_without_es.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="195" selection-end-column="51" />
+        <state relative-caret-position="51">
+          <caret line="7" selection-start-line="7" selection-end-line="195" selection-end-column="51" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
             <element signature="e#397#3562#0" />
@@ -621,39 +584,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/result_analysis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <folding>
+            <marker date="1602688829350" expanded="true" signature="210:211" ph="..." />
+            <marker date="1602688829350" expanded="true" signature="643:644" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/RL_brain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="35" column="42" lean-forward="true" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="92" />
+          <folding>
+            <element signature="e#187#205#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/maze_env.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1955">
+          <caret line="115" selection-start-line="115" selection-end-line="115" />
+          <folding>
+            <element signature="e#52#70#0" expanded="true" />
+            <marker date="1602676158269" expanded="true" signature="6820:7090" ph="..." />
+            <marker date="1602676158269" expanded="true" signature="7107:7116" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/algorithms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="45" column="70" lean-forward="true" selection-start-line="45" selection-start-column="48" selection-end-line="45" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/all_algorithms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="72" column="31" lean-forward="true" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
+        <state relative-caret-position="306">
+          <caret line="40" column="48" lean-forward="true" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
           <folding>
             <element signature="e#186#204#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/miniconda3/envs/tensorflow/lib/python3.6/site-packages/seaborn/matrix.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="516" selection-start-line="516" selection-end-line="516" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/result_analysis.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="17" column="25" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="25" />
-          <folding>
-            <element signature="e#1#22#0" expanded="true" />
-            <marker date="1602687314488" expanded="true" signature="210:211" ph="..." />
-            <marker date="1602687314488" expanded="true" signature="643:644" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/run_main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="102" column="45" lean-forward="true" selection-start-line="102" selection-start-column="45" selection-end-line="102" selection-end-column="45" />
+        <state relative-caret-position="537">
+          <caret line="128" column="28" selection-start-line="128" selection-start-column="28" selection-end-line="128" selection-end-column="28" />
           <folding>
             <element signature="e#46#71#0" expanded="true" />
           </folding>

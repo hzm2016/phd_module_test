@@ -5,6 +5,7 @@ Reinforcement learning maze example.
 from maze_env import Maze
 # from RL_brain import QLearningTable
 from all_algorithms import *
+# from algorithms import *
 import copy as cp
 import matplotlib.pyplot as plt
 import numpy as np
@@ -24,7 +25,7 @@ def run(RL, numEpisode=10):
         print("initial observation :", observation)
         print("initial state :", state)
 
-        epislon_greedy = 0.1 + (0.9 - 0.1)/numEpisode * episode
+        epislon_greedy = 0.7 + (0.9 - 0.7)/numEpisode * episode
         print("epislon :", epislon_greedy)
 
         epi_reward = 0.0
@@ -68,6 +69,7 @@ def run(RL, numEpisode=10):
     env.destroy()
 
     return reward_list, RL.Q_value
+    # return reward_list, np.array(RL.q_table.values.tolist())
 
 
 if __name__ == "__main__":
@@ -89,7 +91,7 @@ if __name__ == "__main__":
     # # print(RL.q_table.loc["test_1", :].to_numpy().argmax())
     # print(RL.q_table.to_numpy())
 
-    parameters = [1, 0.1, 0.01]
+    parameters = [1.0, 0.1, 0.01]
     para_name = "lr_"
     reward_list = []
     value_list = []
@@ -132,8 +134,17 @@ if __name__ == "__main__":
     plt.ylabel('Episode Reward')
     plt.legend()
     plt.show()
-    # a = np.array([0., 1., 2.])
-    # print(a.argmax())
-    # env.after(100, update)
-    #
-    # env.mainloop()
+
+    # a = np.ones((2, 4))
+    # print(a)
+    # a = [a[0, :]]
+    # print(a)
+    # # a = np.array([[0., -1, 0., 0.]])
+    # b = np.insert(a, 0, values=np.array([0, 1, 2, 3]), axis=0)
+    # print(b)
+    # b = np.random.permutation(b.T)
+    # print(b)
+    # b = b.T
+    # print(b)
+    # print(b[1, :].argmax())
+    # print(b[0, b[1, :].argmax()])

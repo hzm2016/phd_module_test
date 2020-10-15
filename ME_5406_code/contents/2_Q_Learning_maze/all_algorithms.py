@@ -30,9 +30,16 @@ class RL(object):
         # epislon-greedy behavior policy
         if np.random.rand() < self.epsilon:
             # choose best action
-            state_action = self.Q_value[observation, :]
-            action = state_action.argmax()
-            print("action list:", state_action)
+            # state_action = [self.Q_value[observation, :]]
+            state_action = np.insert([self.Q_value[observation, :]], 0, values=np.array([0, 1, 2, 3]), axis=0)
+            # print("state_action", state_action)
+            state_action = np.random.permutation(state_action.T)
+            # print("state_action", state_action)
+            state_action = state_action.T
+            # print("state_action", state_action)
+            index = state_action[1, :].argmax()
+            action = int(state_action[0, index])
+            # print("state_action", action)
         else:
             # choose random action
             action = np.random.choice(self.actions)

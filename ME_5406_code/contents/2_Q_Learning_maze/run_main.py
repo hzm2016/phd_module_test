@@ -17,7 +17,7 @@ np.random.seed(0)
 def run(RL, numEpisode=10, max_epsilon=0.98):
     reward_list = []
     num_steps_list = []
-    sarsa = True
+    sarsa = False
     for episode in range(numEpisode):
         print("Episode index :", episode)
 
@@ -78,7 +78,7 @@ def run(RL, numEpisode=10, max_epsilon=0.98):
 if __name__ == "__main__":
     # algorithms
     algorithm_list = ["FVMCWOES", "Q-learning", "sarsa", "expected-sarsa"]
-    algorithm = algorithm_list[2]
+    algorithm = algorithm_list[1]
     parameters_lr = [1.0, 0.1, 0.01]
     parameters_epsilon = [0.99, 0.9, 0.85, 0.6]
     para_name = "lr_"
@@ -106,33 +106,11 @@ if __name__ == "__main__":
         num_steps_list.append(cp.deepcopy(num_steps))
         value_list.append(cp.deepcopy(value))
 
-    np.save("./0-data/sarsa-lr-value-list.npy", np.array(value_list))
-    np.save("./0-data/sarsa-lr-reward-list.npy", np.array(reward_list))
-    np.save("./0-data/sarsa-lr-num-steps-list.npy", np.array(num_steps_list))
-
-    # for index, value in enumerate(value_list):
-    #     print("value :::", value)
-    #     state_value = value.sum(axis=1)
-    #     state_value = state_value.reshape((4, 4))
-    #     print("state_value", state_value)
-    #     # plt_q_table(value=value, name="state_action_value" + str(index))
-    #
-    #     plt_state_action_arrow_value_table(state_value=state_value, value=value, name="state_action_value_arrow" + str(index))
-    #
-    #     plt_state_value_table(value=state_value, name="state_value" + str(index))
-    #
-    # fig = plt.figure()
-    # plt.title('Q-learning')
-    # for index, reward in enumerate(reward_list):
-    #     plt.plot(np.array(reward), label=para_name + str(index))
-    #
-    # plt.xlabel('Episodes')
-    # plt.ylabel('Episode Reward')
-    # plt.legend()
-    # plt.show()
-
-    # data = np.load("./0-data/value-list.npy")
-    # print(data)
+    np.save("./0-data/Q-learning-lr-value-list.npy", np.array(value_list))
+    np.save("./0-data/Q-learning-lr-reward-list.npy", np.array(reward_list))
+    np.save("./0-data/Q-learning-lr-num-steps-list.npy", np.array(num_steps_list))
+    
+    
 
     # print(14//4)
     # print(14%4)

@@ -75,7 +75,7 @@ if __name__ == "__main__":
 
     # algorithms
     # RL = QLearningTable(actions=list(range(env.n_actions)))
-    RL = SarsaTable(actions=list(range(env.n_actions)))
+    # RL = SarsaTable(actions=list(range(env.n_actions)))
 
     # print(RL.q_table)
     # RL.q_table = RL.q_table.append(
@@ -92,16 +92,16 @@ if __name__ == "__main__":
     # # print(RL.q_table.loc["test_1", :].to_numpy().argmax())
     # print(RL.q_table.to_numpy())
 
-    reward_list, value = update(RL, numEpisode=10)
-    # # print("value :::", value)
+    # reward_list, value = update(RL, numEpisode=10)
+    # # # print("value :::", value)
+    # # #
+    # # # value = np.array([[1, 2, 3, 4],
+    # # #                   [0.0, 0.0, -0.5, 0.0]])
     # #
-    # # value = np.array([[1, 2, 3, 4],
-    # #                   [0.0, 0.0, -0.5, 0.0]])
-    #
-    # # value = pd.to_numeric(RL.q_table.values)
-    # print("value :::", RL.q_table.values)
-    value = RL.q_table.values.tolist()
-    print("index :::", RL.q_table.columns)
+    # # # value = pd.to_numeric(RL.q_table.values)
+    # # print("value :::", RL.q_table.values)
+    # value = RL.q_table.values.tolist()
+    # print("index :::", RL.q_table.columns)
 
     # np.save("./0-data/q-learning-value.npy", np.array(value))
     # np.save("./0-data/q-learning-reward.npy", np.array(reward_list))
@@ -121,3 +121,6 @@ if __name__ == "__main__":
     # env.after(100, update)
     #
     # env.mainloop()
+
+    a = np.array([[1., 2., 3.], [0., 0., 1.]])
+    print(np.sum(a[0, :]))

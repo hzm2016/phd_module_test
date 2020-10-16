@@ -5,21 +5,21 @@ Reinforcement Learning Forze Lake example.
 import numpy as np
 import tkinter as tk
 import time
-
+np.random.seed(0)
 
 UNIT = 40   # pixels
 MAZE_H = 4  # grid height
 MAZE_W = 4  # grid width
 
 
-class Maze(tk.Tk, object):
+class Frozen_lake(tk.Tk, object):
     def __init__(self,
                  unit=40,
                  grids_height=4,
                  grids_weight=4,
                  random_obs=False,
                  ):
-        super(Maze, self).__init__()
+        super(Frozen_lake, self).__init__()
         self.unit = unit  # pixel of each grid
         self.map_height_size = grids_height
         self.map_weight_size = grids_weight
@@ -37,7 +37,8 @@ class Maze(tk.Tk, object):
         self.canvas = tk.Canvas(self,
                                 bg='white',
                                 height=self.map_height_size * self.unit,
-                                width=self.map_weight_size * self.unit)
+                                width=self.map_weight_size * self.unit
+                                )
 
         # create grids
         for c in range(0, self.map_weight_size * self.unit, self.unit):
@@ -192,7 +193,7 @@ class Maze(tk.Tk, object):
 
 
 if __name__ == "__main__":
-    env = Maze(unit=40,
+    env = Frozen_lake(unit=40,
                grids_height=4, grids_weight=4,
                random_obs=False)
     env.reset()
@@ -227,6 +228,9 @@ if __name__ == "__main__":
     print("s_ :", s_index)
     print("o_ :", o_)
     print("r :", r)
+    env.render()
+    time.sleep(1)
+    _, state = env.reset()
     env.render()
     time.sleep(1)
 

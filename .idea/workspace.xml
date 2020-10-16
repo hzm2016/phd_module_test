@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ecb2e403-d839-4445-8dd0-ae3bc80d55fc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/run_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/run_main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,7 +15,7 @@
     <SUITE FILE_PATH="coverage/phd_module_code$maze_env.coverage" NAME="maze_env Coverage Results" MODIFIED="1602815497811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze" />
     <SUITE FILE_PATH="coverage/phd_module_code$RL_brain.coverage" NAME="RL_brain Coverage Results" MODIFIED="1602405191738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze" />
     <SUITE FILE_PATH="coverage/phd_module_code$run_this__1_.coverage" NAME="run_this (1) Coverage Results" MODIFIED="1602464340164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ME_5406_code/contents/3_Sarsa_maze" />
-    <SUITE FILE_PATH="coverage/phd_module_code$run_main.coverage" NAME="run_main Coverage Results" MODIFIED="1602836223045" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze" />
+    <SUITE FILE_PATH="coverage/phd_module_code$run_main.coverage" NAME="run_main Coverage Results" MODIFIED="1602838917694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze" />
     <SUITE FILE_PATH="coverage/phd_module_code$result_analysis.coverage" NAME="result_analysis Coverage Results" MODIFIED="1602767878885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze" />
     <SUITE FILE_PATH="coverage/phd_module_code$monte_carlo_without_es.coverage" NAME="monte_carlo_without_es Coverage Results" MODIFIED="1602555296543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze" />
     <SUITE FILE_PATH="coverage/phd_module_code$monte_carlo.coverage" NAME="monte_carlo Coverage Results" MODIFIED="1602422726229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze" />
@@ -36,13 +37,13 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="md" value="1" />
-          <entry key="png" value="3" />
+          <entry key="png" value="7" />
           <entry key="py" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Image" value="3" />
+          <entry key="Image" value="7" />
           <entry key="Markdown" value="1" />
           <entry key="Python" value="23" />
         </counts>
@@ -50,19 +51,19 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="1" />
-          <entry key="py" value="9449" />
+          <entry key="py" value="9599" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="9449" />
+          <entry key="Python" value="9599" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5787126">
+    <splitter split-orientation="horizontal" split-proportion="0.62852263">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -92,8 +93,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/run_main.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="311">
-                  <caret line="82" column="21" lean-forward="true" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
+                <state relative-caret-position="312">
+                  <caret line="110" column="13" lean-forward="true" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
                   <folding>
                     <element signature="e#46#85#0" expanded="true" />
                   </folding>
@@ -131,8 +132,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/all_algorithms.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="190">
-                  <caret line="87" column="16" lean-forward="true" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="16" />
+                <state relative-caret-position="305">
+                  <caret line="135" selection-start-line="135" selection-end-line="135" />
                   <folding>
                     <element signature="e#186#204#0" expanded="true" />
                     <element signature="e#5224#6324#0" />
@@ -474,7 +475,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32277226" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4227723" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -483,12 +484,12 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.24950495" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.2940594" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" weight="0.20820022" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.21192758" />
       <window_info anchor="right" id="Database" order="4" />
     </layout>
     <layout-to-restore>
@@ -644,10 +645,22 @@
     <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/1-figure/Q-learning_reward.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/sarsa_steps.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/sarsa_reward.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/1-figure/expected-sarsa_steps.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/1-figure/expected-sarsa_reward.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/all_algorithms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="87" column="16" lean-forward="true" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="16" />
+        <state relative-caret-position="305">
+          <caret line="135" selection-start-line="135" selection-end-line="135" />
           <folding>
             <element signature="e#186#204#0" expanded="true" />
             <element signature="e#5224#6324#0" />
@@ -657,8 +670,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/run_main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="82" column="21" lean-forward="true" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
+        <state relative-caret-position="312">
+          <caret line="110" column="13" lean-forward="true" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
           <folding>
             <element signature="e#46#85#0" expanded="true" />
           </folding>

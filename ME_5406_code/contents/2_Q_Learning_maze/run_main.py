@@ -26,7 +26,8 @@ def run(RL, algorithm_name=None, numEpisode=10, max_epsilon=0.98):
         print("initial observation :", observation)
         print("initial state :", state)
 
-        epislon_greedy = 0.9 + (max_epsilon - 0.9)/numEpisode * episode
+        # epislon_greedy = 0.9 + (max_epsilon - 0.9)/numEpisode * episode
+        epislon_greedy = max_epsilon
         print("epislon :", epislon_greedy)
 
         epi_reward = 0.0
@@ -80,15 +81,17 @@ def run(RL, algorithm_name=None, numEpisode=10, max_epsilon=0.98):
 if __name__ == "__main__":
     # algorithms
     algorithm_list = ["FVMCWOES", "Q-learning", "sarsa", "expected-sarsa"]
-    algorithm = algorithm_list[3]
+    algorithm = algorithm_list[1]
     parameters_lr = [1.0, 0.1, 0.01]
     parameters_epsilon = [0.99, 0.9, 0.85, 0.6]
-    para_name = "lr_"
+
     reward_list = []
     value_list = []
     num_steps_list = []
 
-    for para in parameters_lr:
+    para_name = "_epsilon_"
+    parameter_list = parameters_epsilon
+    for para in parameter_list:
         # set up environment
         env = Frozen_lake()
 
@@ -96,15 +99,15 @@ if __name__ == "__main__":
         if algorithm == "sarsa":
             RL = SarsaTable(actions=list(range(env.n_actions)),
                             states=list(range(env.n_states)),
-                            learning_rate=para, reward_decay=0.9, e_greedy=0.9)
+                            learning_rate=0.1, reward_decay=0.9, e_greedy=para)
         elif algorithm == "expected-sarsa":
             RL = ExpectSarsaTable(actions=list(range(env.n_actions)),
                             states=list(range(env.n_states)),
-                            learning_rate=para, reward_decay=0.9, e_greedy=0.9)
+                            learning_rate=0.1, reward_decay=0.9, e_greedy=para)
         elif algorithm == "Q-learning":
             RL = QLearningTable(actions=list(range(env.n_actions)),
                                 states=list(range(env.n_states)),
-                                learning_rate=para, reward_decay=0.9, e_greedy=0.9)
+                                learning_rate=0.1, reward_decay=0.9, e_greedy=para)
         else:
             s_a_value = monteCarloNoES(env, numEpisode=20, gamma=1.0, epsilon=0.1)
 
@@ -114,14 +117,14 @@ if __name__ == "__main__":
         num_steps_list.append(cp.deepcopy(num_steps))
         value_list.append(cp.deepcopy(value))
 
-    np.save("./0-data/" + algorithm + "-lr-value-list.npy", np.array(value_list))
-    np.save("./0-data/" + algorithm + "-lr-reward-list.npy", np.array(reward_list))
-    np.save("./0-data/" + algorithm + "-lr-num-steps-list.npy", np.array(num_steps_list))
+    np.save("./0-data/" + algorithm + para_name + "-lr-value-list.npy", np.array(value_list))
+    np.save("./0-data/" + algorithm + para_name + "-lr-reward-list.npy", np.array(reward_list))
+    np.save("./0-data/" + algorithm + para_name + "-lr-num-steps-list.npy", np.array(num_steps_list))
 
     # plot results
-    # value_list = np.load("./0-data/Q-learning-lr-value-list.npy")
-    # reward_list = np.load("./0-data/Q-learning-lr-reward-list.npy")
-    # num_steps_list = np.load("./0-data/Q-learning-lr-num-steps-list.npy")
+    # value_list = np.load("./0-data/" + algorithm + "-lr-value-list.npy")
+    # reward_list = np.load("./0-data/" + algorithm + "-lr-reward-list.npy")
+    # num_steps_list = np.load("./0-data/" + algorithm + "-lr-num-steps-list.npy")
     #
     # print(num_steps_list)
     #

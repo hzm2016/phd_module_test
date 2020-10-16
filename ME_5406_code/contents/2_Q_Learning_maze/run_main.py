@@ -81,7 +81,7 @@ def run(RL, algorithm_name=None, numEpisode=10, max_epsilon=0.98):
 if __name__ == "__main__":
     # algorithms
     algorithm_list = ["FVMCWOES", "Q-learning", "sarsa", "expected-sarsa"]
-    algorithm = algorithm_list[1]
+    algorithm = algorithm_list[3]
     parameters_lr = [1.0, 0.1, 0.01]
     parameters_epsilon = [0.99, 0.9, 0.85, 0.6]
 
@@ -91,6 +91,8 @@ if __name__ == "__main__":
 
     para_name = "_epsilon_"
     parameter_list = parameters_epsilon
+
+    # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     for para in parameter_list:
         # set up environment
         env = Frozen_lake()
@@ -122,9 +124,10 @@ if __name__ == "__main__":
     np.save("./0-data/" + algorithm + para_name + "-lr-num-steps-list.npy", np.array(num_steps_list))
 
     # plot results
-    # value_list = np.load("./0-data/" + algorithm + "-lr-value-list.npy")
-    # reward_list = np.load("./0-data/" + algorithm + "-lr-reward-list.npy")
-    # num_steps_list = np.load("./0-data/" + algorithm + "-lr-num-steps-list.npy")
+    # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    # value_list = np.load("./0-data/" + algorithm + para_name + "-lr-value-list.npy")
+    # reward_list = np.load("./0-data/" + algorithm + para_name + "-lr-reward-list.npy")
+    # num_steps_list = np.load("./0-data/" + algorithm + para_name + "-lr-num-steps-list.npy")
     #
     # print(num_steps_list)
     #
@@ -136,7 +139,7 @@ if __name__ == "__main__":
     #
     # plt.xlabel('Episodes')
     # plt.ylabel('Episode Reward')
-    # plt.savefig("1-figure/" + algorithm + '_reward.png')
+    # plt.savefig("1-figure/" + algorithm + para_name + '_reward.png')
     # plt.legend(loc=2, bbox_to_anchor=(1.05, 1.0))
     # plt.show()
     #
@@ -148,7 +151,7 @@ if __name__ == "__main__":
     #
     # plt.xlabel('Episodes')
     # plt.ylabel('Episode Steps')
-    # plt.savefig("1-figure/" + algorithm + '_steps.png')
+    # plt.savefig("1-figure/" + algorithm + para_name + '_steps.png')
     # plt.legend(loc=2, bbox_to_anchor=(1.05, 1.0))
     # plt.show()
 

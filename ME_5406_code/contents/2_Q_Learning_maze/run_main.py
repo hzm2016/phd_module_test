@@ -101,7 +101,7 @@ if __name__ == "__main__":
         else:
             s_a_value = monteCarloNoES(env, numEpisode=20, gamma=1.0, epsilon=0.1)
 
-        reward, num_steps, value = run(RL, numEpisode=2)
+        reward, num_steps, value = run(RL, numEpisode=100, max_epsilon=0.98)
         reward_list.append(cp.deepcopy(reward))
         num_steps_list.append(cp.deepcopy(num_steps))
         value_list.append(cp.deepcopy(value))

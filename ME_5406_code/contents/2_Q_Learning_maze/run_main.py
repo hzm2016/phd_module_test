@@ -16,6 +16,7 @@ np.random.seed(0)
 
 def run(RL, numEpisode=10, max_epsilon=0.98):
     reward_list = []
+    num_steps_list = []
     sarsa = True
     for episode in range(numEpisode):
         print("Episode index :", episode)
@@ -30,6 +31,7 @@ def run(RL, numEpisode=10, max_epsilon=0.98):
         print("epislon :", epislon_greedy)
 
         epi_reward = 0.0
+        epi_num_steps = 0
         while True:
             # fresh env
             env.render()
@@ -42,7 +44,7 @@ def run(RL, numEpisode=10, max_epsilon=0.98):
             # RL take action and get next observation and reward
             observation_, state_, reward, done = env.step(action)
             epi_reward += reward
-
+            epi_num_steps += 1
             if sarsa:
                 # RL choose action based on next observation
                 action_ = RL.choose_action(state_)
@@ -63,12 +65,13 @@ def run(RL, numEpisode=10, max_epsilon=0.98):
                 break
 
         reward_list.append(cp.deepcopy(epi_reward))
+        num_steps_list.append(cp.deepcopy(epi_num_steps))
 
     # end of game
     print('game over')
     env.destroy()
 
-    return reward_list, RL.Q_value
+    return reward_list, num_steps_list, RL.Q_value
     # return reward_list, np.array(RL.q_table.values.tolist())
 
 
@@ -81,6 +84,7 @@ if __name__ == "__main__":
     para_name = "lr_"
     reward_list = []
     value_list = []
+    num_steps_list = []
     for para in parameters_lr:
         # set up environment
         env = Frozen_lake()
@@ -97,12 +101,14 @@ if __name__ == "__main__":
         else:
             s_a_value = monteCarloNoES(env, numEpisode=20, gamma=1.0, epsilon=0.1)
 
-        reward, value = run(RL, numEpisode=2)
+        reward, num_steps, value = run(RL, numEpisode=2)
         reward_list.append(cp.deepcopy(reward))
+        num_steps_list.append(cp.deepcopy(num_steps))
         value_list.append(cp.deepcopy(value))
 
     np.save("./0-data/sarsa-lr-value-list.npy", np.array(value_list))
     np.save("./0-data/sarsa-lr-reward-list.npy", np.array(reward_list))
+    np.save("./0-data/sarsa-lr-num-steps-list.npy", np.array(num_steps_list))
 
     # for index, value in enumerate(value_list):
     #     print("value :::", value)

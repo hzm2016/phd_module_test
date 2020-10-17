@@ -80,7 +80,7 @@ def run(RL, env, algorithm_name=None, numEpisode=10, max_epsilon=0.98):
 if __name__ == "__main__":
 	# algorithms
 	algorithm_list = ["FVMCWOES", "Q-learning", "sarsa", "expected-sarsa"]
-	algorithm = algorithm_list[2]
+	algorithm = algorithm_list[1]
 	parameters_lr = [1.0, 0.1, 0.01]
 	parameters_discount_rate = [1.0, 0.99, 0.9, 0.7, 0.3]
 	# parameters_discount_rate = [0.99]
@@ -99,20 +99,20 @@ if __name__ == "__main__":
 	# para_name = "_discount_rate_"
 	# parameter_list = parameters_discount_rate
 
-	run_plot = False
+	run_plot = True
 	if run_plot == True:
 		# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		for para in parameter_list:
 			# set up environment
 			# 4 X 4
-			env = Frozen_lake(unit=40,
-							  grids_height=4, grids_weight=4,
-							  random_obs=False)
+			# env = Frozen_lake(unit=40,
+			# 				  grids_height=4, grids_weight=4,
+			# 				  random_obs=False)
 
 			# 10 X 10
-			# env = Frozen_lake(unit=40,
-			#                   grids_height=10, grids_weight=10,
-			#                   random_obs=True)
+			env = Frozen_lake(unit=40,
+			                  grids_height=10, grids_weight=10,
+			                  random_obs=True)
 
 			print("algorithm ：:", algorithm)
 			# set algorithm

@@ -124,7 +124,8 @@ def plt_state_action_arrow_value_table(state_value, value, name=None):
 
 
 # use to plot reward and steps
-def comparision_performance(value_list=None, label_list=None,
+def comparision_performance(value_list=None,
+							label_list=None,
 							para_name=r'$\epsilon$',
 							para_name_text='epsilon',
 							y_label_text='Episode Steps',
@@ -142,6 +143,26 @@ def comparision_performance(value_list=None, label_list=None,
 	plt.tight_layout()
 	plt.savefig("1-figure/" + algorithm + '_' + para_name_text + '_' + figure_name + '.pdf')
 
+
+# use to plot reward and steps
+def comparision_all_algorithms_performance(value_list=None,
+							label_list=None,
+							para_name=r'$\epsilon$',
+							para_name_text='epsilon',
+							y_label_text='Episode Steps',
+							figure_name='',
+							algorithm=''):
+	fig = plt.figure(figsize=(15, 7), dpi=600)
+	plt.title(algorithm)
+
+	for index, reward in enumerate(value_list):
+		plt.plot(np.array(reward)[:100], label=para_name + str(label_list[index]))
+
+	plt.xlabel('Episodes')
+	plt.ylabel(y_label_text)
+	plt.legend(loc=2, bbox_to_anchor=(1.05, 1.0))
+	plt.tight_layout()
+	plt.savefig("1-figure/" + algorithm + '_' + para_name_text + '_' + figure_name + '.pdf')
 
 # import numpy as np
 # np.random.seed(0)

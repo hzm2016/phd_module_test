@@ -117,6 +117,7 @@ class ExpectSarsaTable(RL):
 
 # simulate one trajectory
 def sample_one_trajectory(env,
+                          episode_length=50,
                           stateActionValues,
                           stateActionPairCount,
                           epsilon=0.1
@@ -136,7 +137,7 @@ def sample_one_trajectory(env,
 
     epi_reward = 0.0
     epi_num_steps = 0
-    while True:
+    while epi_num_steps < episode_length:
         env.render()
         observation_, state_, reward, done = env.step(action)
         singleTrajectory.append([state, action, reward])
@@ -144,8 +145,8 @@ def sample_one_trajectory(env,
         epi_num_steps += 1
         state = state_
         action = behaviorPolicy(env, state, stateActionValues, stateActionPairCount, epsilon=epsilon)
-        if done:
-            break
+        # if done:
+        #     break
     return singleTrajectory, epi_reward, epi_num_steps
 
 

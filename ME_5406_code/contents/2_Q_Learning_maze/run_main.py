@@ -87,6 +87,7 @@ if __name__ == "__main__":
     parameters_discount_rate = [1.0, 0.99, 0.9, 0.7, 0.3]
     # parameters_discount_rate = [0.99]
     parameters_epsilon = [0.99, 0.9, 0.85, 0.6, 0.3, 0.1]
+    parameters_length = [50, 40, 30, 20, 10]
 
     reward_list = []
     value_list = []
@@ -94,12 +95,18 @@ if __name__ == "__main__":
 
     para_name = "_epsilon_"
     parameter_list = parameters_epsilon
+    para_name_symbol = r'$\epsilon$'
+    para_name_text = "epsilon"
 
     # para_name = "_lr_"
     # parameter_list = parameters_lr
-    
+    # para_name_symbol = r'$\alpha$'
+    # para_name_text = "lr"
+
     # para_name = "_discount_rate_"
     # parameter_list = parameters_discount_rate
+    # para_name_symbol = r'$\gamma$'
+    # para_name_text = "discount_rate"
 
     run_plot = True
     if run_plot == True:
@@ -147,6 +154,7 @@ if __name__ == "__main__":
                                                max_epsilon=parameter_list[0])
             elif algorithm == "FVMCWOES":
                 value, reward, num_steps = monteCarloNoES(env,
+                                                          episode_length=50,
                                                           numEpisode=100,
                                                           gamma=1.0,
                                                           epsilon=para)
@@ -156,7 +164,7 @@ if __name__ == "__main__":
             reward_list.append(cp.deepcopy(reward))
             num_steps_list.append(cp.deepcopy(num_steps))
             value_list.append(cp.deepcopy(value))
-    
+
         np.save("./0-data/" + algorithm + para_name + "-lr-value-list.npy", np.array(value_list))
         np.save("./0-data/" + algorithm + para_name + "-lr-reward-list.npy", np.array(reward_list))
         np.save("./0-data/" + algorithm + para_name + "-lr-num-steps-list.npy", np.array(num_steps_list))
@@ -201,21 +209,21 @@ if __name__ == "__main__":
         # plt.legend(loc=2, bbox_to_anchor=(1.05, 1.0))
         # plt.show()
 
-        comparision_performance(value_list=reward_list,
-                                label_list=parameters_epsilon,
-                                para_name=r'$\epsilon$',
-                                para_name_text='epsilon',
-                                y_label_text='Episode Reward',
-                                figure_name='reward',
-                                algorithm=algorithm)
-
-        comparision_performance(value_list=num_steps_list,
-                                label_list=parameters_epsilon,
-                                para_name=r'$\epsilon$',
-                                para_name_text='epsilon',
-                                y_label_text='Episode Steps',
-                                figure_name='steps',
-                                algorithm=algorithm)
+        # comparision_performance(value_list=reward_list,
+        #                         label_list=parameter_list,
+        #                         para_name=para_name_symbol,
+        #                         para_name_text=para_name_text,
+        #                         y_label_text='Episode Reward',
+        #                         figure_name='reward',
+        #                         algorithm=algorithm)
+        #
+        # comparision_performance(value_list=num_steps_list,
+        #                         label_list=parameter_list,
+        #                         para_name=para_name_symbol,
+        #                         para_name_text=para_name_text,
+        #                         y_label_text='Episode Steps',
+        #                         figure_name='steps',
+        #                         algorithm=algorithm)
 
         # for index, value in enumerate(value_list[0]):
         # print("value ::", value)
@@ -226,10 +234,39 @@ if __name__ == "__main__":
         # plt_state_value_table(state_action_value, name="state_action_value")
         # plt_state_action_arrow_value_table(state_action_value, value, name="state_action_value_whole")
 
-        value = value_list[0]
-        print("state_value ::", value)
-        state_action = value.sum(axis=1)
-        value = np.round(value, 2)
-        state_action_value = np.round(np.reshape(state_action, (4, 4)), 2)
-        plt_state_value_table(state_action_value, name="state_action_value_" + algorithm)
-        plt_state_action_arrow_value_table(state_action_value, value, name="state_action_value_whole_" + algorithm)
+        # value = value_list[0]
+        # print("state_value ::", value)
+        # state_action = value.sum(axis=1)
+        # value = np.round(value, 2)
+        # state_action_value = np.round(np.reshape(state_action, (4, 4)), 2)
+        # plt_state_value_table(state_action_value, name="state_action_value_" + algorithm)
+        # plt_state_action_arrow_value_table(state_action_value, value, name="state_action_value_whole_" + algorithm)
+
+        # plot best comparison performance of each algorithm
+        algorithm_list = ["Q-learning", "sarsa", "expected-sarsa"]
+        algorithm_value_list = []
+        algorithm_reward_list = []
+        algorithm_steps_list = []
+        for index, algorithm in enumerate(algorithm_list):
+            value_list = np.load("./0-data/" + algorithm + para_name + "-lr-value-list.npy")
+            reward_list = np.load("./0-data/" + algorithm + para_name + "-lr-reward-list.npy")
+            num_steps_list = np.load("./0-data/" + algorithm + para_name + "-lr-num-steps-list.npy")
+            algorithm_value_list.append(value_list[0])
+            algorithm_reward_list.append(reward_list[0])
+            algorithm_steps_list.append(num_steps_list[0])
+
+        comparision_all_algorithms_performance(value_list=algorithm_reward_list,
+                                label_list=algorithm_list,
+                                para_name='',
+                                para_name_text='reward',
+                                y_label_text='Episode Reward',
+                                figure_name='comparision',
+                                algorithm='all_algorithms')
+
+        comparision_all_algorithms_performance(value_list=algorithm_steps_list,
+                                label_list=algorithm_list,
+                                para_name='',
+                                para_name_text='steps',
+                                y_label_text='Episode Steps',
+                                figure_name='comparision',
+                                algorithm='all_algorithms')

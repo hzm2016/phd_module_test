@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ecb2e403-d839-4445-8dd0-ae3bc80d55fc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/run_main_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/run_main_2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/result_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/result_analysis.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,9 +63,10 @@
     <session id="-631888931">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -93,20 +92,17 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6719804">
+    <splitter split-orientation="horizontal" split-proportion="0.5049444">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/run_main.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="191">
-                  <caret line="147" column="41" lean-forward="true" selection-start-line="147" selection-start-column="41" selection-end-line="147" selection-end-column="41" />
+                <state relative-caret-position="1445">
+                  <caret line="147" column="41" selection-start-line="147" selection-start-column="41" selection-end-line="147" selection-end-column="41" />
                   <folding>
                     <element signature="e#72#89#0" expanded="true" />
                     <element signature="e#376#2416#0" />
-                    <element signature="e#3722#4241#0" />
-                    <element signature="e#4306#4855#0" />
-                    <element signature="e#4916#5455#0" />
                   </folding>
                 </state>
               </provider>
@@ -116,7 +112,7 @@
             <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/run_main_2.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="686">
-                  <caret line="233" lean-forward="true" selection-start-line="233" selection-end-line="233" />
+                  <caret line="233" selection-start-line="233" selection-end-line="233" />
                   <folding>
                     <element signature="e#72#89#0" expanded="true" />
                   </folding>
@@ -127,20 +123,11 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/frozen_lake_env.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-581">
+                <state relative-caret-position="3349">
                   <caret line="197" column="4" selection-start-line="197" selection-start-column="4" selection-end-line="199" selection-end-column="41" />
                   <folding>
                     <element signature="e#52#70#0" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/algorithms.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="833">
-                  <caret line="50" column="12" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="51" />
                 </state>
               </provider>
             </entry>
@@ -152,14 +139,13 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/all_algorithms.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="354">
-                  <caret line="221" column="7" selection-start-line="221" selection-start-column="7" selection-end-line="221" selection-end-column="7" />
+                <state relative-caret-position="649">
+                  <caret line="274" selection-start-line="274" selection-end-line="274" />
                   <folding>
                     <element signature="e#186#204#0" expanded="true" />
-                    <element signature="e#1717#2345#0" />
-                    <element signature="e#2386#3006#0" />
-                    <element signature="e#3054#3724#0" />
-                    <element signature="e#5652#7145#0" />
+                    <element signature="e#1714#2340#0" />
+                    <element signature="e#2381#3001#0" />
+                    <element signature="e#3049#3719#0" />
                   </folding>
                 </state>
               </provider>
@@ -168,13 +154,13 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/result_analysis.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="197">
-                  <caret line="122" column="16" lean-forward="true" selection-start-line="122" selection-start-column="16" selection-end-line="122" selection-end-column="16" />
+                <state relative-caret-position="2205">
+                  <caret line="238" column="96" selection-start-line="238" selection-start-column="96" selection-end-line="238" selection-end-column="96" />
                   <folding>
                     <element signature="e#0#21#0" expanded="true" />
+                    <element signature="e#297#773#0" />
                     <element signature="e#836#2486#0" />
                     <element signature="e#2575#4383#0" />
-                    <element signature="e#4641#5042#0" />
                   </folding>
                 </state>
               </provider>
@@ -228,10 +214,10 @@
         <option value="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/maze_env.py" />
         <option value="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/run_this.py" />
         <option value="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/frozen_lake_env.py" />
-        <option value="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/all_algorithms.py" />
-        <option value="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/result_analysis.py" />
         <option value="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/run_main.py" />
         <option value="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/run_main_2.py" />
+        <option value="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/result_analysis.py" />
+        <option value="$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/all_algorithms.py" />
       </list>
     </option>
   </component>
@@ -241,7 +227,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-1920" />
     <option name="width" value="1920" />
     <option name="height" value="1080" />
@@ -269,6 +255,13 @@
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="ME_5406_code" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="contents" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="phd_module_run_data" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="ME_5406_code" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="contents" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="2_Q_Learning_maze" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -443,10 +436,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1920" y="0" width="1920" height="1080" extended-state="0" />
+    <frame x="-1920" y="23" width="1920" height="1057" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1373802" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13844515" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -460,7 +453,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.17326732" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.17305699" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -576,13 +569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/algorithms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="50" column="12" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/monte_carlo_without_es.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
@@ -605,36 +591,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/result_analysis.py">
+    <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/run_main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="122" column="16" lean-forward="true" selection-start-line="122" selection-start-column="16" selection-end-line="122" selection-end-column="16" />
+        <state relative-caret-position="1445">
+          <caret line="147" column="41" selection-start-line="147" selection-start-column="41" selection-end-line="147" selection-end-column="41" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
-            <element signature="e#836#2486#0" />
-            <element signature="e#2575#4383#0" />
-            <element signature="e#4641#5042#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/all_algorithms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="221" column="7" selection-start-line="221" selection-start-column="7" selection-end-line="221" selection-end-column="7" />
-          <folding>
-            <element signature="e#186#204#0" expanded="true" />
-            <element signature="e#1717#2345#0" />
-            <element signature="e#2386#3006#0" />
-            <element signature="e#3054#3724#0" />
-            <element signature="e#5652#7145#0" />
+            <element signature="e#72#89#0" expanded="true" />
+            <element signature="e#376#2416#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/frozen_lake_env.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-581">
+        <state relative-caret-position="3349">
           <caret line="197" column="4" selection-start-line="197" selection-start-column="4" selection-end-line="199" selection-end-column="41" />
           <folding>
             <element signature="e#52#70#0" expanded="true" />
@@ -642,26 +612,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/run_main.py">
+    <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/algorithms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="147" column="41" lean-forward="true" selection-start-line="147" selection-start-column="41" selection-end-line="147" selection-end-column="41" />
-          <folding>
-            <element signature="e#72#89#0" expanded="true" />
-            <element signature="e#376#2416#0" />
-            <element signature="e#3722#4241#0" />
-            <element signature="e#4306#4855#0" />
-            <element signature="e#4916#5455#0" />
-          </folding>
+        <state relative-caret-position="833">
+          <caret line="50" column="12" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/run_main_2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="686">
-          <caret line="233" lean-forward="true" selection-start-line="233" selection-end-line="233" />
+          <caret line="233" selection-start-line="233" selection-end-line="233" />
           <folding>
             <element signature="e#72#89#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/result_analysis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2205">
+          <caret line="238" column="96" selection-start-line="238" selection-start-column="96" selection-end-line="238" selection-end-column="96" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#297#773#0" />
+            <element signature="e#836#2486#0" />
+            <element signature="e#2575#4383#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ME_5406_code/contents/2_Q_Learning_maze/all_algorithms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="649">
+          <caret line="274" selection-start-line="274" selection-end-line="274" />
+          <folding>
+            <element signature="e#186#204#0" expanded="true" />
+            <element signature="e#1714#2340#0" />
+            <element signature="e#2381#3001#0" />
+            <element signature="e#3049#3719#0" />
           </folding>
         </state>
       </provider>

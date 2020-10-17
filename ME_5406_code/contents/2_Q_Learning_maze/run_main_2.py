@@ -3,9 +3,9 @@ Reinforcement learning maze example.
 """
 # from algorithms import *
 import copy as cp
-
 import numpy as np
 # from RL_brain import QLearningTable
+
 from all_algorithms import *
 from frozen_lake_env import Frozen_lake
 from result_analysis import *
@@ -33,7 +33,7 @@ def run(RL, env, algorithm_name=None, numEpisode=10, max_epsilon=0.98):
 
         epi_reward = 0.0
         epi_num_steps = 0
-        while epi_num_steps < 200:
+        while epi_num_steps < 400:
             # fresh env
             env.render()
 
@@ -101,7 +101,7 @@ if __name__ == "__main__":
     para_name = "_discount_rate_"
     parameter_list = parameters_discount_rate
 
-    run_plot = False
+    run_plot = True
     if run_plot == True:
     # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         for para in parameter_list:
@@ -141,7 +141,7 @@ if __name__ == "__main__":
     
             reward, num_steps, value = run(RL, env, algorithm_name=algorithm,
                                            numEpisode=500,
-                                           max_epsilon=parameter_list[0])
+                                           max_epsilon=parameters_epsilon[1])
             reward_list.append(cp.deepcopy(reward))
             num_steps_list.append(cp.deepcopy(num_steps))
             value_list.append(cp.deepcopy(value))

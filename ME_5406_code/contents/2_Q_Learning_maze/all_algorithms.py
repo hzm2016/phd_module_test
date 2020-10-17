@@ -86,9 +86,9 @@ class SarsaTable(RL):
         # q_predict
         q_predict = self.Q_value[s, a]
         if done:
-            q_target = r + self.gamma * self.Q_value[s_, a_]  # next state is not terminal
-        else:
             q_target = r  # next state is terminal
+        else:
+            q_target = r + self.gamma * self.Q_value[s_, a_]  # next state is not terminal
         self.Q_value[s, a] += self.lr * (q_target - q_predict)  # update
 
 
@@ -106,11 +106,11 @@ class ExpectSarsaTable(RL):
         # q_predict
         q_predict = self.Q_value[s, a]
         if done:
-            # next state is not terminal
-            q_target = r + self.gamma * np.sum(self.Q_value[s_, :])
-        else:
             # next state is terminal
             q_target = r
+        else:
+            # next state is not terminal
+            q_target = r + self.gamma * np.sum(self.Q_value[s_, :])
         # update based on TD
         self.Q_value[s, a] += self.lr * (q_target - q_predict)
 

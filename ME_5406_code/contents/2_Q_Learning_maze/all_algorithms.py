@@ -168,7 +168,7 @@ def behaviorPolicy(env, state, stateActionValues, stateActionPairCount, epsilon=
 
 
 # main function for first-visit Monte Carlo control without exploring starts
-def monteCarloNoES(env, numEpisode=10, gamma=1.0, epsilon=0.1):
+def monteCarloNoES(env, episode_length=50, numEpisode=10, gamma=1.0, epsilon=0.1):
     reward_list = []
     num_steps_list = []
 
@@ -186,7 +186,8 @@ def monteCarloNoES(env, numEpisode=10, gamma=1.0, epsilon=0.1):
     for episode in range(numEpisode):
         print('episode:', episode)
 
-        trajectory, epi_reward, epi_num_steps = sample_one_trajectory(env, stateActionValues, stateActionPairCount, epsilon=epsilon)
+        trajectory, epi_reward, epi_num_steps = sample_one_trajectory(env, episode_length=episode_length,
+                                                                      stateActionValues, stateActionPairCount, epsilon=epsilon)
 
         G = 0.0
         # update values of state-action pairs

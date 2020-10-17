@@ -117,7 +117,7 @@ class ExpectSarsaTable(RL):
 
 # simulate one trajectory
 def sample_one_trajectory(env,
-                          episode_length=50,
+                          episode_length,
                           stateActionValues,
                           stateActionPairCount,
                           epsilon=0.1
@@ -186,7 +186,7 @@ def monteCarloNoES(env, episode_length=50, numEpisode=10, gamma=1.0, epsilon=0.1
     for episode in range(numEpisode):
         print('episode:', episode)
 
-        trajectory, epi_reward, epi_num_steps = sample_one_trajectory(env, episode_length=episode_length,
+        trajectory, epi_reward, epi_num_steps = sample_one_trajectory(env, episode_length,
                                                                       stateActionValues, stateActionPairCount, epsilon=epsilon)
 
         G = 0.0

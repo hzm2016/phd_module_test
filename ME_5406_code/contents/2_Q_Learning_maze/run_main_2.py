@@ -138,8 +138,8 @@ if __name__ == "__main__":
 				RL = QLearningTable(actions=list(range(env.n_actions)),
 									states=list(range(env.n_states)),
 									learning_rate=parameters_lr[1],
-									reward_decay=para,
-									e_greedy=parameters_epsilon[0])
+									reward_decay=parameters_discount_rate[1],
+									e_greedy=para)
 				reward, num_steps, value = run(RL, env, algorithm_name=algorithm,
 											   numEpisode=500,
 											   max_epsilon=parameter_list[0])

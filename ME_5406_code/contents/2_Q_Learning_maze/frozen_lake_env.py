@@ -24,7 +24,6 @@ class Frozen_lake(tk.Tk, object):
         self.map_height_size = grids_height
         self.map_weight_size = grids_weight
         self.random_obs = random_obs
-        # self.action_space = ['l', 'r', 'u', 'd']
         self.action_space = ['r', 'd', 'l', 'u']
         self.n_actions = len(self.action_space)
         self.n_states = self.map_height_size * self.map_weight_size
@@ -52,15 +51,13 @@ class Frozen_lake(tk.Tk, object):
         if self.random_obs:
             num_obs = round(self.map_height_size * self.map_weight_size // 4)
 
+            hole_list_index = list(range(1, self.map_height_size * self.map_weight_size - 1))
+            # print(hole_list_index)
+            hole_list_index = np.random.choice(hole_list_index, num_obs, replace=False)
+            # print(hole_list_index)
             self.hole_list = []
-            # generate obstacles ：：：holes
-            for i in range(num_obs):
-                hole = np.random.randint(low=0, high=self.map_height_size - 1, size=2)
-                # print("hole", hole)
-                # print("hole list", self.hole_list)
-                while (hole.tolist() == [3, 3]) or (hole.tolist() in self.hole_list):
-                    hole = np.random.randint(low=0, high=self.map_height_size-1, size=2)
-                self.hole_list.append(hole.tolist())
+            for hole in hole_list_index:
+                self.hole_list.append([hole % self.map_height_size, hole // self.map_height_size])
 
             # create env
             self.hells_list = []
@@ -88,7 +85,8 @@ class Frozen_lake(tk.Tk, object):
                 self.hells_list.append(self.hell)
 
         # create frisbee
-        oval = np.array([3, 3])
+        # oval = np.array([3, 3])
+        oval = np.array([self.map_height_size - 1, self.map_weight_size -1])
         oval_center = np.array([oval[0] * self.unit + self.unit//2,
                                 oval[1] * self.unit + self.unit//2])
         self.oval = self.canvas.create_oval(
@@ -194,8 +192,12 @@ class Frozen_lake(tk.Tk, object):
 
 if __name__ == "__main__":
     env = Frozen_lake(unit=40,
-               grids_height=4, grids_weight=4,
-               random_obs=False)
+               grids_height=10, grids_weight=10,
+               random_obs=True)
+
+    # env = Frozen_lake(unit=40,
+    #                   grids_height=4, grids_weight=4,
+    #                   random_obs=False)
     env.reset()
     env.render()
     time.sleep(1)
@@ -206,32 +208,73 @@ if __name__ == "__main__":
     print("r :", r)
     env.render()
     time.sleep(1)
+
     o_, s_index, r, done = env.step(0)
     print("s_ :", s_index)
     print("o_ :", o_)
     print("r :", r)
     env.render()
     time.sleep(1)
+
+    o_, s_index, r, done = env.step(0)
+    print("s_ :", s_index)
+    print("o_ :", o_)
+    print("r :", r)
+    env.render()
+    time.sleep(1)
+
+    o_, s_index, r, done = env.step(0)
+    print("s_ :", s_index)
+    print("o_ :", o_)
+    print("r :", r)
+    env.render()
+    time.sleep(1)
+
     o_, s_index, r, done = env.step(1)
     print("s_ :", s_index)
     print("o_ :", o_)
     print("r :", r)
     env.render()
     time.sleep(1)
+
+    o_, s_index, r, done = env.step(1)
+    print("s_ :", s_index)
+    print("o_ :", o_)
+    print("r :", r)
+    env.render()
+    time.sleep(1)
+
     o_, s_index, r, done = env.step(2)
     print("s_ :", s_index)
     print("o_ :", o_)
     print("r :", r)
     env.render()
     time.sleep(1)
+
+    o_, s_index, r, done = env.step(2)
+    print("s_ :", s_index)
+    print("o_ :", o_)
+    print("r :", r)
+    env.render()
+    time.sleep(1)
+
     o_, s_index, r, done = env.step(3)
     print("s_ :", s_index)
     print("o_ :", o_)
     print("r :", r)
     env.render()
     time.sleep(1)
+
     _, state = env.reset()
     env.render()
     time.sleep(1)
 
-
+    # hole_list = list(range(1, 98))
+    # print(hole_list)
+    # # hole_list_1 = np.random.randint(low=1, high=98, size=25, replace=False)
+    # hole_list = np.random.choice(hole_list, 25, replace=False)
+    # print(hole_list)
+    # hole_list_center = []
+    # for hole in hole_list:
+    #     hole_list_center.append([hole%10, hole//10])
+    # print(hole_list_center)

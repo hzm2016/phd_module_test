@@ -84,7 +84,8 @@ if __name__ == "__main__":
     algorithm_list = ["FVMCWOES", "Q-learning", "sarsa", "expected-sarsa"]
     algorithm = algorithm_list[3]
     parameters_lr = [1.0, 0.1, 0.01]
-    parameters_discount_rate = [1.0, 0.99, 0.9, 0.7, 0.3]
+    # parameters_discount_rate = [1.0, 0.99, 0.9, 0.7, 0.3]
+    parameters_discount_rate = [0.99]
     parameters_epsilon = [0.99, 0.9, 0.85, 0.6, 0.3, 0.1]
 
     reward_list = []
@@ -100,7 +101,7 @@ if __name__ == "__main__":
     para_name = "_discount_rate_"
     parameter_list = parameters_discount_rate
 
-    run_plot = False
+    run_plot = True
     if run_plot == True:
     # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         for para in parameter_list:
@@ -145,15 +146,23 @@ if __name__ == "__main__":
             num_steps_list.append(cp.deepcopy(num_steps))
             value_list.append(cp.deepcopy(value))
     
-        np.save("./0-data/" + algorithm + para_name + "-lr-value-list.npy", np.array(value_list))
-        np.save("./0-data/" + algorithm + para_name + "-lr-reward-list.npy", np.array(reward_list))
-        np.save("./0-data/" + algorithm + para_name + "-lr-num-steps-list.npy", np.array(num_steps_list))
+        # np.save("./0-data/" + algorithm + para_name + "-lr-value-list.npy", np.array(value_list))
+        # np.save("./0-data/" + algorithm + para_name + "-lr-reward-list.npy", np.array(reward_list))
+        # np.save("./0-data/" + algorithm + para_name + "-lr-num-steps-list.npy", np.array(num_steps_list))
+
+        np.save("./0-data/10_10" + algorithm + para_name + "-lr-value-list.npy", np.array(value_list))
+        np.save("./0-data/10_10" + algorithm + para_name + "-lr-reward-list.npy", np.array(reward_list))
+        np.save("./0-data/10_10" + algorithm + para_name + "-lr-num-steps-list.npy", np.array(num_steps_list))
     else:
         # plot results
         # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-        value_list = np.load("./0-data/" + algorithm + para_name + "-lr-value-list.npy")
-        reward_list = np.load("./0-data/" + algorithm + para_name + "-lr-reward-list.npy")
-        num_steps_list = np.load("./0-data/" + algorithm + para_name + "-lr-num-steps-list.npy")
+        # value_list = np.load("./0-data/" + algorithm + para_name + "-lr-value-list.npy")
+        # reward_list = np.load("./0-data/" + algorithm + para_name + "-lr-reward-list.npy")
+        # num_steps_list = np.load("./0-data/" + algorithm + para_name + "-lr-num-steps-list.npy")
+
+        value_list = np.load("./0-data/10_10" + algorithm + para_name + "-lr-value-list.npy")
+        reward_list = np.load("./0-data/10_10" + algorithm + para_name + "-lr-reward-list.npy")
+        num_steps_list = np.load("./0-data/10_10" + algorithm + para_name + "-lr-num-steps-list.npy")
 
         # print(num_steps_list)
         #

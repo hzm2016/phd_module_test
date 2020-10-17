@@ -204,7 +204,7 @@ def monteCarloNoES(env, numEpisode=10, gamma=1.0, epsilon=0.1):
             state = one_step[0]
             action = one_step[1]
             if one_step[:2] not in np.array(trajectory)[:, :2][:index]:
-                stateActionValues[state, action] += G
+                stateActionValues[state, action] += stateActionReturn[state, action]
                 stateActionPairCount[state, action] += 1
 
         reward_list.append(cp.deepcopy(epi_reward))

@@ -105,7 +105,15 @@ if __name__ == "__main__":
     # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         for para in parameter_list:
             # set up environment
-            env = Frozen_lake()
+            # 4 X 4
+            # env = Frozen_lake(unit=40,
+            #                   grids_height=4, grids_weight=4,
+            #                   random_obs=False)
+
+            # 10 X 10
+            env = Frozen_lake(unit=40,
+                              grids_height=10, grids_weight=10,
+                              random_obs=True)
 
             print("algorithm ：:", algorithm)
             # set algorithm

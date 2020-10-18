@@ -1,12 +1,9 @@
 import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
-# matplotlib inline
-# from mpl_toolkits.mplot3d import Axes3D
-sns.set_theme(font_scale=2.0) # font_scale=1.5
-FONT_SIZE = 16
+sns.set_theme(font_scale=2.5)
+FONT_SIZE = 20
 arrow_width = 0.03
-# plt.rcParams['pdf.fonttype'] = FONT_SIZE
 
 
 def plt_q_table(value, name=None):
@@ -29,35 +26,7 @@ def plt_state_value_table(value, name=None):
 	plt.title("State Value (V)", fontsize=FONT_SIZE)
 	# print("value :::", value)
 	h = sns.heatmap(value, square=True, cmap='coolwarm',
-					cbar=False, annot=True, annot_kws={'size': 16}, ax=ax)
-
-	# # plot q-value and action selection
-	# center_list = [[1.5, 1.5], [1.5, 2.5]]
-	# 	# np.array([1.5, 1.5])
-	# arrow_offset = 0.1
-	# arrow_length = 0.25
-	# text_offset = 0.35
-	#
-	# for center in center_list:
-	# 	# right
-	# 	plt.text(text_offset + center[0], -0.1 + center[1], "0.1", size=FONT_SIZE, ha='center', va='center',
-	# 			 color='darkred')
-	# 	plt.arrow(arrow_offset + center[0], 0. + center[1], arrow_length, 0., width=arrow_width)
-	#
-	# 	# down
-	# 	plt.text(0.15 + center[0], text_offset + center[1], "0.2", size=FONT_SIZE, ha='center', va='center',
-	# 			 color='darkred')
-	# 	plt.arrow(0. + center[0], arrow_offset + center[1], 0., arrow_length, width=arrow_width)
-	#
-	# 	# left
-	# 	plt.text(-text_offset + center[0], -0.1 + center[1], "0.3", size=FONT_SIZE, ha='center', va='center',
-	# 			 color='darkred')
-	# 	plt.arrow(-arrow_offset + center[0], 0. + center[1], - arrow_length, 0., width=arrow_width)
-	#
-	# 	# up
-	# 	plt.text(0.15 + center[0], -text_offset + center[1], "0.2", size=FONT_SIZE, ha='center', va='center',
-	# 			 color='darkred')
-	# 	plt.arrow(0. + center[0], -arrow_offset + center[1], 0., - arrow_length, width=arrow_width)
+					cbar=False, annot=True, annot_kws={'size': 24}, ax=ax)
 
 	cb = h.figure.colorbar(h.collections[0])
 	cb.ax.tick_params(labelsize=FONT_SIZE)
@@ -70,14 +39,17 @@ def plt_state_value_table(value, name=None):
 
 
 def plt_state_action_arrow_value_table(state_value, value, name=None):
+	# fig, ax = plt.subplots(figsize=(20, 16))
+	# FONT_SIZE = 28
 	fig, ax = plt.subplots(figsize=(10, 8))
+	FONT_SIZE = 18
 	plt.title("State-Action Value (Q)", fontsize=FONT_SIZE)
 	print("value :::", value)
 	h = sns.heatmap(state_value, square=True, cmap='coolwarm',
-					cbar=True, annot=True, annot_kws={'size': 16}, ax=ax)
+					cbar=False, annot=True, annot_kws={'size': 20}, ax=ax)
 
-	arrow_offset = 0.1
-	arrow_length = 0.25
+	arrow_offset = 0.15
+	arrow_length = 0.20
 	text_offset = 0.35
 
 	length = value.shape[0]
@@ -85,37 +57,40 @@ def plt_state_action_arrow_value_table(state_value, value, name=None):
 	height = state_value.shape[1]
 	for i in range(length):
 		center = np.array([i%weight + 0.5, i//height + 0.5])
-		# print("center ::", center)
 
-		# right
-		plt.text(text_offset + center[0], -0.1 + center[1], str(value[i, 0]),
-				 size=FONT_SIZE,
-				 ha='center', va='center', weight="bold", color='black')
-		plt.arrow(arrow_offset + center[0], 0. + center[1], arrow_length, 0., width=arrow_width)
+		if i%weight < weight -1:
+			# right
+			plt.text(text_offset + center[0], -0.15 + center[1], str(value[i, 0]),
+					 size=FONT_SIZE,
+					 ha='center', va='center', weight="bold", color='black')
+			plt.arrow(arrow_offset + center[0], 0. + center[1], arrow_length, 0., width=arrow_width)
 
-		# down
-		plt.text(0.15 + center[0], text_offset + center[1], str(value[i, 1]),
-				 size=FONT_SIZE,
-				 ha='center', va='center', weight="bold", color='black')
-		plt.arrow(0. + center[0], arrow_offset + center[1], 0., arrow_length, width=arrow_width)
+		if i//height < height - 1:
+			# down
+			plt.text(0.2 + center[0], text_offset + center[1], str(value[i, 1]),
+					 size=FONT_SIZE,
+					 ha='center', va='center', weight="bold", color='black')
+			plt.arrow(0. + center[0], arrow_offset + center[1], 0., arrow_length, width=arrow_width)
 
-		# left
-		plt.text(-text_offset + center[0], -0.1 + center[1], str(value[i, 2]),
-				 size=FONT_SIZE,
-				 ha='center', va='center', weight="bold", color='black')
-		plt.arrow(-arrow_offset + center[0], 0. + center[1], - arrow_length, 0., width=arrow_width)
+		if i%weight > 0:
+			# left
+			plt.text(-text_offset + center[0], -0.15 + center[1], str(value[i, 2]),
+					 size=FONT_SIZE,
+					 ha='center', va='center', weight="bold", color='black')
+			plt.arrow(-arrow_offset + center[0], 0. + center[1], - arrow_length, 0., width=arrow_width)
 
-		# up
-		plt.text(0.15 + center[0], -text_offset + center[1], str(value[i, 3]),
-				 size=FONT_SIZE,
-				 ha='center', va='center', weight="bold",
-				 color='black')
-		plt.arrow(0. + center[0], -arrow_offset + center[1], 0., - arrow_length, width=arrow_width)
+		if i//height > 0:
+			# up
+			plt.text(0.2 + center[0], -text_offset + center[1], str(value[i, 3]),
+					 size=FONT_SIZE,
+					 ha='center', va='center', weight="bold",
+					 color='black')
+			plt.arrow(0. + center[0], -arrow_offset + center[1], 0., - arrow_length, width=arrow_width)
 
-	# cb = h.figure.colorbar(h.collections[0])
-	# cb.ax.tick_params(labelsize=FONT_SIZE)
-	# plt.xticks(fontsize=FONT_SIZE)
-	# plt.yticks(fontsize=FONT_SIZE)
+	cb = h.figure.colorbar(h.collections[0])
+	cb.ax.tick_params(labelsize=FONT_SIZE)
+	plt.xticks(fontsize=FONT_SIZE)
+	plt.yticks(fontsize=FONT_SIZE)
 	plt.tight_layout()
 	plt.savefig("1-figure" + "/" + name + ".png")
 	plt.savefig("1-figure" + "/" + name + ".pdf")
@@ -131,14 +106,17 @@ def comparision_performance(value_list=None,
 							figure_name='',
 							algorithm=''):
 	fig = plt.figure(figsize=(10, 5), dpi=600)
-	plt.title(algorithm)
+	FONT_SIZE = 16
+	plt.title(algorithm, fontsize=FONT_SIZE)
 
 	for index, reward in enumerate(value_list):
 		plt.plot(np.array(reward), label=para_name + '=' + str(label_list[index]))
 
-	plt.xlabel('Episodes')
-	plt.ylabel(y_label_text)
-	plt.legend(loc=2, bbox_to_anchor=(1.05, 1.0))
+	plt.xticks(fontsize=FONT_SIZE)
+	plt.yticks(fontsize=FONT_SIZE)
+	plt.xlabel('Episodes', fontsize=FONT_SIZE)
+	plt.ylabel(y_label_text, fontsize=FONT_SIZE)
+	plt.legend(loc=2, bbox_to_anchor=(1.05, 1.0), fontsize=FONT_SIZE)
 	plt.tight_layout()
 	plt.savefig("1-figure/" + algorithm + '_' + para_name_text + '_' + figure_name + '.pdf')
 

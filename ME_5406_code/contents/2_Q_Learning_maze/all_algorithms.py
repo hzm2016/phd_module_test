@@ -47,7 +47,7 @@ class RL(object):
         pass
 
 
-# off-policy
+# off-policy :: Q-learning
 class QLearningTable(RL):
     def __init__(self,
                  actions,
@@ -226,7 +226,7 @@ def monteCarloNoES(env, episode_length=50, numEpisode=10, gamma=1.0, epsilon=0.1
             state = one_step[0]
             action = one_step[1]
             if one_step[:2] not in np.array(trajectory)[:, :2][:index]:
-                stateActionValues[state, action] += G
+                stateActionValues[state, action] += stateActionReturn[state, action]
                 stateActionPairCount[state, action] += 1
 
         reward_list.append(cp.deepcopy(epi_reward))
@@ -234,6 +234,45 @@ def monteCarloNoES(env, episode_length=50, numEpisode=10, gamma=1.0, epsilon=0.1
 
     return stateActionValues/stateActionPairCount, reward_list, num_steps_list
 
+
+def moteCarloES_test(env, episode_length=50, numEpisode=10, gamma=0.99, epsilon=0.1):
+    reward_list = []
+    num_steps_list = []
+
+    # initial state-action-value
+    # (n_states, n_actions)
+    stateActionValues = np.zeros((env.n_states, env.n_actions))
+
+    # (n_states, n_actions)
+    stateActionReturn = np.zeros((env.n_states, env.n_actions))
+
+    # initialze counts to 1 to avoid division by 0
+    stateActionPairCount = np.ones((env.n_states, env.n_actions))
+
+    # play for multi episodes
+    for episode in range(numEpisode):
+        print('episode:', episode)
+
+        trajectory, epi_reward, epi_num_steps = sample_one_trajectory(env, episode_length, stateActionValues,
+                                                                      stateActionPairCount, epsilon=epsilon)
+
+        G = 0.0
+
+        for idx, one_step in enumerate(trajectory[::-1]):
+            G = gamma * G + one_step[2]
+            state = one_step[0]
+            action = one_step[1]
+
+            stateActionReturn[state, action] = G
+            # first visit check
+            if state not in np.array(trajectory[::-1])[:, 0][idx + 1:]:
+                stateActionValues[state, action] += stateActionReturn[state, action]
+                stateActionPairCount[state, action] += 1
+
+        reward_list.append(cp.deepcopy(epi_reward))
+        num_steps_list.append(cp.deepcopy(epi_num_steps))
+
+    return stateActionValues / stateActionPairCount, reward_list, num_steps_list
 
 if __name__ == "__main__":
     # set up environment
@@ -248,7 +287,8 @@ if __name__ == "__main__":
         env = Frozen_lake(unit=40,
                           grids_height=4, grids_weight=4,
                           random_obs=False)
-        value, reward, num_steps = monteCarloNoES(env, numEpisode=4, gamma=1.0, epsilon=para)
+        # value, reward, num_steps = monteCarloNoES(env, numEpisode=4, gamma=1.0, epsilon=para)
+        value, reward, num_steps = moteCarloES_test(env, numEpisode=4, gamma=1.0, epsilon=para)
 
     algorithm = "FVMCWOES"
     comparision_performance(value_list=[reward_list],

@@ -81,8 +81,9 @@ if __name__ == "__main__":
     parameters_lr = [1.0, 0.1, 0.01]
     parameters_discount_rate = [1.0, 0.99, 0.9, 0.7, 0.3]
     # parameters_discount_rate = [0.99]
-    parameters_epsilon = [0.99, 0.9, 0.85, 0.6, 0.3, 0.1]
+    # parameters_epsilon = [0.99, 0.9, 0.85, 0.6, 0.3, 0.1]
     parameters_length = [50, 40, 30, 20, 10]
+    parameters_epsilon = [0.3, 0.1]
 
     reward_list = []
     value_list = []
@@ -103,7 +104,7 @@ if __name__ == "__main__":
     # para_name_symbol = r'$\gamma$'
     # para_name_text = "discount_rate"
 
-    run_plot = True
+    run_plot = False
     if run_plot == True:
     # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         for para in parameter_list:
@@ -177,7 +178,7 @@ if __name__ == "__main__":
         # value_list = np.load("./0-data/10_10" + algorithm + para_name + "-lr-value-list.npy")
         # reward_list = np.load("./0-data/10_10" + algorithm + para_name + "-lr-reward-list.npy")
         # num_steps_list = np.load("./0-data/10_10" + algorithm + para_name + "-lr-num-steps-list.npy")
-        #
+
         # # print(num_steps_list)
         # #
         # fig = plt.figure(figsize=(8, 4))
@@ -220,15 +221,40 @@ if __name__ == "__main__":
                                 figure_name='steps',
                                 algorithm=algorithm)
 
-        # for index, value in enumerate(value_list[0]):
+        # comparision_performance(value_list=reward_list,
+        #                         label_list=parameter_list,
+        #                         para_name=para_name_symbol,
+        #                         para_name_text=para_name_text,
+        #                         y_label_text='Episode Reward',
+        #                         figure_name='10_10_reward',
+        #                         algorithm=algorithm)
+        #
+        # comparision_performance(value_list=num_steps_list,
+        #                         label_list=parameter_list,
+        #                         para_name=para_name_symbol,
+        #                         para_name_text=para_name_text,
+        #                         y_label_text='Episode Steps',
+        #                         figure_name='10_10_steps',
+        #                         algorithm=algorithm)
+
+        # # for index, value in enumerate(value_list[0]):
         value = value_list[0]
         print("value ::", value)
         print("state_value ::", value)
         state_action = value.sum(axis=1)
-        value = np.round(value, 2)
-        state_action_value = np.round(np.reshape(state_action, (4, 4)), 2)
+        value = np.round(value, 1)
+        state_action_value = np.round(np.reshape(state_action, (4, 4)), 1)
         plt_state_value_table(state_action_value, name="state_action_value_" + algorithm)
         plt_state_action_arrow_value_table(state_action_value, value, name="state_action_value_whole_" + algorithm)
+
+        # value = value_list[0]
+        # print("value ::", value)
+        # print("state_value ::", value)
+        # state_action = value.sum(axis=1)
+        # value = np.round(value, 1)
+        # state_action_value = np.round(np.reshape(state_action, (10, 10)), 1)
+        # plt_state_value_table(state_action_value, name="state_action_value_10_10_" + algorithm)
+        # plt_state_action_arrow_value_table(state_action_value, value, name="state_action_value_whole_10_10_" + algorithm)
 
         # # plot best comparison performance of each algorithm
         # algorithm_list = ["Q-learning", "sarsa", "expected-sarsa"]

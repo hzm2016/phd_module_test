@@ -11,6 +11,7 @@ from frozen_lake_env import Frozen_lake
 from result_analysis import *
 import matplotlib.pyplot as plt
 
+
 np.random.seed(0)
 
 
@@ -82,11 +83,12 @@ def run(RL, env, algorithm_name=None, numEpisode=10, max_epsilon=0.98):
 if __name__ == "__main__":
     # algorithms
     algorithm_list = ["FVMCWOES", "Q-learning", "sarsa", "expected-sarsa"]
-    algorithm = algorithm_list[0]
+    algorithm = algorithm_list[2]
     parameters_lr = [1.0, 0.1, 0.01]
     parameters_discount_rate = [1.0, 0.99, 0.9, 0.7, 0.3]
     # parameters_discount_rate = [0.99]
-    parameters_epsilon = [0.99, 0.9, 0.85, 0.6, 0.3, 0.1]
+    # parameters_epsilon = [0.99, 0.9, 0.85, 0.6, 0.3, 0.1]
+    parameters_epsilon = [0.9]
     parameters_length = [50, 40, 30, 20, 10]
 
     reward_list = []
@@ -138,8 +140,8 @@ if __name__ == "__main__":
                 RL = ExpectSarsaTable(actions=list(range(env.n_actions)),
                                       states=list(range(env.n_states)),
                                       learning_rate=parameters_lr[1],
-                                      reward_decay=para,
-                                      e_greedy=parameters_epsilon[0])
+                                      reward_decay=parameters_discount_rate[0],
+                                      e_greedy=para)
                 reward, num_steps, value = run(RL, env, algorithm_name=algorithm,
                                                numEpisode=500,
                                                max_epsilon=parameter_list[0])
@@ -147,10 +149,10 @@ if __name__ == "__main__":
                 RL = QLearningTable(actions=list(range(env.n_actions)),
                                     states=list(range(env.n_states)),
                                     learning_rate=parameters_lr[1],
-                                    reward_decay=para,
-                                    e_greedy=parameters_epsilon[0])
+                                    reward_decay=parameters_discount_rate[0],
+                                    e_greedy=para)
                 reward, num_steps, value = run(RL, env, algorithm_name=algorithm,
-                                               numEpisode=500,
+                                               numEpisode=300,
                                                max_epsilon=parameter_list[0])
             elif algorithm == "FVMCWOES":
                 value, reward, num_steps = monteCarloNoES(env,
@@ -209,21 +211,21 @@ if __name__ == "__main__":
         # plt.legend(loc=2, bbox_to_anchor=(1.05, 1.0))
         # plt.show()
 
-        # comparision_performance(value_list=reward_list,
-        #                         label_list=parameter_list,
-        #                         para_name=para_name_symbol,
-        #                         para_name_text=para_name_text,
-        #                         y_label_text='Episode Reward',
-        #                         figure_name='reward',
-        #                         algorithm=algorithm)
-        #
-        # comparision_performance(value_list=num_steps_list,
-        #                         label_list=parameter_list,
-        #                         para_name=para_name_symbol,
-        #                         para_name_text=para_name_text,
-        #                         y_label_text='Episode Steps',
-        #                         figure_name='steps',
-        #                         algorithm=algorithm)
+        comparision_performance(value_list=reward_list,
+                                label_list=parameter_list,
+                                para_name=para_name_symbol,
+                                para_name_text=para_name_text,
+                                y_label_text='Episode Reward',
+                                figure_name='reward',
+                                algorithm=algorithm)
+
+        comparision_performance(value_list=num_steps_list,
+                                label_list=parameter_list,
+                                para_name=para_name_symbol,
+                                para_name_text=para_name_text,
+                                y_label_text='Episode Steps',
+                                figure_name='steps',
+                                algorithm=algorithm)
 
         # for index, value in enumerate(value_list[0]):
         # print("value ::", value)
@@ -243,30 +245,30 @@ if __name__ == "__main__":
         # plt_state_action_arrow_value_table(state_action_value, value, name="state_action_value_whole_" + algorithm)
 
         # plot best comparison performance of each algorithm
-        algorithm_list = ["Q-learning", "sarsa", "expected-sarsa"]
-        algorithm_value_list = []
-        algorithm_reward_list = []
-        algorithm_steps_list = []
-        for index, algorithm in enumerate(algorithm_list):
-            value_list = np.load("./0-data/" + algorithm + para_name + "-lr-value-list.npy")
-            reward_list = np.load("./0-data/" + algorithm + para_name + "-lr-reward-list.npy")
-            num_steps_list = np.load("./0-data/" + algorithm + para_name + "-lr-num-steps-list.npy")
-            algorithm_value_list.append(value_list[0])
-            algorithm_reward_list.append(reward_list[0])
-            algorithm_steps_list.append(num_steps_list[0])
-
-        comparision_all_algorithms_performance(value_list=algorithm_reward_list,
-                                label_list=algorithm_list,
-                                para_name='',
-                                para_name_text='reward',
-                                y_label_text='Episode Reward',
-                                figure_name='comparision',
-                                algorithm='all_algorithms')
-
-        comparision_all_algorithms_performance(value_list=algorithm_steps_list,
-                                label_list=algorithm_list,
-                                para_name='',
-                                para_name_text='steps',
-                                y_label_text='Episode Steps',
-                                figure_name='comparision',
-                                algorithm='all_algorithms')
+        # algorithm_list = ["Q-learning", "sarsa", "expected-sarsa"]
+        # algorithm_value_list = []
+        # algorithm_reward_list = []
+        # algorithm_steps_list = []
+        # for index, algorithm in enumerate(algorithm_list):
+        #     value_list = np.load("./0-data/" + algorithm + para_name + "-lr-value-list.npy")
+        #     reward_list = np.load("./0-data/" + algorithm + para_name + "-lr-reward-list.npy")
+        #     num_steps_list = np.load("./0-data/" + algorithm + para_name + "-lr-num-steps-list.npy")
+        #     algorithm_value_list.append(value_list[0])
+        #     algorithm_reward_list.append(reward_list[0])
+        #     algorithm_steps_list.append(num_steps_list[0])
+        #
+        # comparision_all_algorithms_performance(value_list=algorithm_reward_list,
+        #                         label_list=algorithm_list,
+        #                         para_name='',
+        #                         para_name_text='reward',
+        #                         y_label_text='Episode Reward',
+        #                         figure_name='comparision',
+        #                         algorithm='all_algorithms')
+        #
+        # comparision_all_algorithms_performance(value_list=algorithm_steps_list,
+        #                         label_list=algorithm_list,
+        #                         para_name='',
+        #                         para_name_text='steps',
+        #                         y_label_text='Episode Steps',
+        #                         figure_name='comparision',
+        #                         algorithm='all_algorithms')

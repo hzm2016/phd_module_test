@@ -135,7 +135,7 @@ def comparision_performance(value_list=None,
 	plt.title(algorithm)
 
 	for index, reward in enumerate(value_list):
-		plt.plot(np.array(reward)[:100], label=para_name + '=' + str(label_list[index]))
+		plt.plot(np.array(reward)[:300], label=para_name + '=' + str(label_list[index]))
 
 	plt.xlabel('Episodes')
 	plt.ylabel(y_label_text)

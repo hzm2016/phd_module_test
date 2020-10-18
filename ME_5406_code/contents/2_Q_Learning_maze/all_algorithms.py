@@ -1,15 +1,9 @@
-"""
-This part of code is the Q learning brain, which is a brain of the agent.
-All decisions are made in here.
-
-View more on my tutorial page: https://morvanzhou.github.io/tutorials/
-"""
 import numpy as np
 import pandas as pd
 import time
 from result_analysis import *
 import copy as cp
-import matplotlib.pyplot as plt
+np.random.seed(0)
 
 
 class RL(object):
@@ -28,24 +22,26 @@ class RL(object):
         self.q_table = pd.DataFrame(columns=self.actions)
         self.Q_value = np.zeros((len(self.states), len(self.actions)))
 
-    def choose_action(self, observation, epsilon=0.1):
+    def choose_action(self, state, ava_action_list, epsilon=0.1):
         self.epsilon = epsilon
         # action selection
         # epislon-greedy behavior policy
         if np.random.rand() < self.epsilon:
             # choose best action also with random when some action have same value
-            state_action = np.insert([self.Q_value[observation, :]], 0, values=np.array([0, 1, 2, 3]), axis=0)
+            state_action = np.insert([self.Q_value[state, :]], 0, values=np.array([0, 1, 2, 3]), axis=0)
             state_action = np.random.permutation(state_action.T)
             state_action = state_action.T
             index = state_action[1, :].argmax()
             action = int(state_action[0, index])
+            if action in ava_action_list:
+                return action
+            else:
+                return np.random.choice(ava_action_list)
         else:
             # choose random action
-            action = np.random.choice(self.actions)
-        return action
-
-    def avaliable_action(self, observation):
-        return self.actions
+            # action = np.random.choice(self.actions)
+            action = np.random.choice(ava_action_list)
+            return action
 
     def learn(self, *args):
         pass
@@ -53,6 +49,27 @@ class RL(object):
 
 # off-policy
 class QLearningTable(RL):
+    def __init__(self,
+                 actions,
+                 states,
+                 learning_rate=0.01,
+                 reward_decay=0.9,
+                 e_greedy=0.9):
+        super(QLearningTable, self).__init__(actions, states, learning_rate, reward_decay, e_greedy)
+
+    def learn(self, s, a, r, s_, done):
+        # q_predict
+        q_predict = self.Q_value[s, a]
+        if done:
+            q_target = r  # next state is terminal
+        else:
+            q_target = r + self.gamma * self.Q_value[s_, :].max()  # next state is not terminal
+
+        self.Q_value[s, a] += self.lr * (q_target - q_predict)  # update
+
+
+# off-policy :: double Q-learning
+class DoubleLearningTable(RL):
     def __init__(self,
                  actions,
                  states,
@@ -106,11 +123,12 @@ class ExpectSarsaTable(RL):
         # q_predict
         q_predict = self.Q_value[s, a]
         if done:
-            # next state is not terminal
-            q_target = r + self.gamma * np.sum(self.Q_value[s_, :])
-        else:
             # next state is terminal
             q_target = r
+        else:
+            # next state is not terminal
+            q_target = r + self.gamma * np.sum(self.Q_value[s_, :])
+
         # update based on TD
         self.Q_value[s, a] += self.lr * (q_target - q_predict)
 
@@ -153,6 +171,7 @@ def sample_one_trajectory(env,
 # epsilon-greedy behavior policy
 def behaviorPolicy(env, state, stateActionValues, stateActionPairCount, epsilon=0.1):
     values_ = stateActionValues[state, :] / stateActionPairCount[state, :]
+    ava_action_list = env.check_avaliable_action()
     if np.random.rand() < (1 - epsilon + epsilon / 4):
         # action = np.random.choice([action_ for action_, value_ in enumerate(values_) if value_ == np.max(values_)])
         # print("value :::", values_)
@@ -162,9 +181,12 @@ def behaviorPolicy(env, state, stateActionValues, stateActionPairCount, epsilon=
         state_action = state_action.T
         index = state_action[1, :].argmax()
         action = int(state_action[0, index])
-        return action
+        if action in ava_action_list:
+            return action
+        else:
+            return np.random.choice(ava_action_list)
     else:
-        return np.random.choice(list(range(env.n_actions)))
+        return np.random.choice(ava_action_list)
 
 
 # main function for first-visit Monte Carlo control without exploring starts
@@ -186,8 +208,7 @@ def monteCarloNoES(env, episode_length=50, numEpisode=10, gamma=1.0, epsilon=0.1
     for episode in range(numEpisode):
         print('episode:', episode)
 
-        trajectory, epi_reward, epi_num_steps = sample_one_trajectory(env, episode_length,
-                                                                      stateActionValues, stateActionPairCount, epsilon=epsilon)
+        trajectory, epi_reward, epi_num_steps = sample_one_trajectory(env, episode_length, stateActionValues, stateActionPairCount, epsilon=epsilon)
 
         G = 0.0
         # update values of state-action pairs
@@ -205,7 +226,7 @@ def monteCarloNoES(env, episode_length=50, numEpisode=10, gamma=1.0, epsilon=0.1
             state = one_step[0]
             action = one_step[1]
             if one_step[:2] not in np.array(trajectory)[:, :2][:index]:
-                stateActionValues[state, action] += stateActionReturn[state, action]
+                stateActionValues[state, action] += G
                 stateActionPairCount[state, action] += 1
 
         reward_list.append(cp.deepcopy(epi_reward))
@@ -219,7 +240,7 @@ if __name__ == "__main__":
     from frozen_lake_env import Frozen_lake
 
     parameters_epsilon = [0.99, 0.90, 0.85, 0.60, 0.30, 0.10]
-    parameters_list = parameters_epsilon
+    parameter_list = [0.9]
     reward_list = []
     num_steps_list = []
     for para in parameter_list:
@@ -227,7 +248,7 @@ if __name__ == "__main__":
         env = Frozen_lake(unit=40,
                           grids_height=4, grids_weight=4,
                           random_obs=False)
-        value, reward, num_steps = monteCarloNoES(env, numEpisode=100, gamma=1.0, epsilon=para)
+        value, reward, num_steps = monteCarloNoES(env, numEpisode=4, gamma=1.0, epsilon=para)
 
     algorithm = "FVMCWOES"
     comparision_performance(value_list=[reward_list],

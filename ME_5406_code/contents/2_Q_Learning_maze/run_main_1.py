@@ -77,11 +77,12 @@ def run(RL, env, algorithm_name=None, numEpisode=10, max_epsilon=0.98):
 if __name__ == "__main__":
     # algorithms
     algorithm_list = ["FVMCWOES", "Q-learning", "sarsa", "expected-sarsa"]
-    algorithm = algorithm_list[0]
+    algorithm = algorithm_list[1]
     parameters_lr = [1.0, 0.1, 0.01]
     parameters_discount_rate = [1.0, 0.99, 0.9, 0.7, 0.3]
     # parameters_discount_rate = [0.99]
-    parameters_epsilon = [0.99, 0.9, 0.85, 0.6, 0.3, 0.1]
+    # parameters_epsilon = [0.99, 0.9, 0.85, 0.6, 0.3, 0.1]
+	parameters_epsilon = [0.9]
     parameters_length = [50, 40, 30, 20, 10]
 
     reward_list = []
@@ -109,14 +110,14 @@ if __name__ == "__main__":
         for para in parameter_list:
             # set up environment
             # 4 X 4
-            env = Frozen_lake(unit=40,
-                              grids_height=4, grids_weight=4,
-                              random_obs=False)
+            # env = Frozen_lake(unit=40,
+            #                   grids_height=4, grids_weight=4,
+            #                   random_obs=False)
 
             # 10 X 10
-            # env = Frozen_lake(unit=40,
-            #                   grids_height=10, grids_weight=10,
-            #                   random_obs=True)
+            env = Frozen_lake(unit=40,
+                              grids_height=10, grids_weight=10,
+                              random_obs=True)
 
             print("algorithm ：:", algorithm)
             # set algorithm
@@ -124,28 +125,28 @@ if __name__ == "__main__":
                 RL = SarsaTable(actions=list(range(env.n_actions)),
                                 states=list(range(env.n_states)),
                                 learning_rate=parameters_lr[1],
-                                reward_decay=para,
-                                e_greedy=parameters_epsilon[0])
+                                reward_decay=parameters_discount_rate[1],
+                                e_greedy=para)
                 reward, num_steps, value = run(RL, env, algorithm_name=algorithm,
-                                               numEpisode=500,
+                                               numEpisode=300,
                                                max_epsilon=parameter_list[0])
             elif algorithm == "expected-sarsa":
                 RL = ExpectSarsaTable(actions=list(range(env.n_actions)),
                                       states=list(range(env.n_states)),
                                       learning_rate=parameters_lr[1],
-                                      reward_decay=para,
-                                      e_greedy=parameters_epsilon[0])
+                                      reward_decay=parameters_discount_rate[1],
+                                      e_greedy=para)
                 reward, num_steps, value = run(RL, env, algorithm_name=algorithm,
-                                               numEpisode=500,
+                                               numEpisode=300,
                                                max_epsilon=parameter_list[0])
             elif algorithm == "Q-learning":
                 RL = QLearningTable(actions=list(range(env.n_actions)),
                                     states=list(range(env.n_states)),
                                     learning_rate=parameters_lr[1],
-                                    reward_decay=para,
-                                    e_greedy=parameters_epsilon[0])
+                                    reward_decay=parameters_discount_rate[1],
+                                    e_greedy=para)
                 reward, num_steps, value = run(RL, env, algorithm_name=algorithm,
-                                               numEpisode=500,
+                                               numEpisode=300,
                                                max_epsilon=parameter_list[0])
             elif algorithm == "FVMCWOES":
                 value, reward, num_steps = monteCarloNoES(env,

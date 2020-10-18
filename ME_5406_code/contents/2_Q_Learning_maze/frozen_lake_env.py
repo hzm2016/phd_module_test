@@ -49,6 +49,7 @@ class Frozen_lake(tk.Tk, object):
 
         # create obstacle
         if self.random_obs:
+            # for 10 X 10
             num_obs = round(self.map_height_size * self.map_weight_size // 4)
 
             hole_list_index = list(range(1, self.map_height_size * self.map_weight_size - 1))
@@ -70,7 +71,7 @@ class Frozen_lake(tk.Tk, object):
                     fill='black')
                 self.hells_list.append(self.hell)
         else:
-            # set fixed obstacles ：：：holes
+            # set fixed obstacles ：：：holes for 4 x 4
             self.hole_list = np.array([[1, 1], [3, 1], [3, 2], [0, 3]])
 
             # create env
@@ -103,7 +104,6 @@ class Frozen_lake(tk.Tk, object):
             start_center[0] + 15, start_center[1] + 15,
             fill='red')
 
-        # print([self.canvas.coords(hell) for hell in self.hells_list])
         # pack all
         self.canvas.pack()
 
@@ -129,19 +129,6 @@ class Frozen_lake(tk.Tk, object):
     def step(self, action):
         s = self.canvas.coords(self.rect)
         base_action = np.array([0, 0])
-
-        # if action == 0:  # left
-        #     if s[0] > self.unit:
-        #         base_action[0] -= self.unit
-        # elif action == 1:   # right
-        #     if s[0] < (self.map_weight_size - 1) * self.unit:
-        #         base_action[0] += self.unit
-        # elif action == 2:   # up
-        #     if s[1] > self.unit:
-        #         base_action[1] -= self.unit
-        # elif action == 3:   # down
-        #     if s[1] < (self.map_height_size - 1) * self.unit:
-        #         base_action[1] += self.unit
 
         # new version
         if action == 0:  # right
@@ -185,23 +172,52 @@ class Frozen_lake(tk.Tk, object):
 
         return index_1 * self.map_height_size + index_0
 
+    def check_avaliable_action(self):
+        current_state = self.canvas.coords(self.rect)
+        avaliable_action_list = []
+
+        # right
+        if current_state[0] < (self.map_weight_size - 1) * self.unit:
+            avaliable_action_list.append(0)
+        # down
+        if current_state[1] < (self.map_height_size - 1) * self.unit:
+            avaliable_action_list.append(1)
+        # left
+        if current_state[0] > self.unit:
+            avaliable_action_list.append(2)
+        # up
+        if current_state[1] > self.unit:
+            avaliable_action_list.append(3)
+
+        return avaliable_action_list
+
     def render(self):
         time.sleep(0.1)
         self.update()
 
 
 if __name__ == "__main__":
-    env = Frozen_lake(unit=40,
-               grids_height=10, grids_weight=10,
-               random_obs=True)
-
     # env = Frozen_lake(unit=40,
-    #                   grids_height=4, grids_weight=4,
-    #                   random_obs=False)
+    #            grids_height=10, grids_weight=10,
+    #            random_obs=True)
+
+    env = Frozen_lake(unit=40,
+                      grids_height=4, grids_weight=4,
+                      random_obs=False)
     env.reset()
     env.render()
     time.sleep(1)
 
+    print('action_list', env.check_avaliable_action())
+    o_, s_index, r, done = env.step(0)
+    print("s_ :", s_index)
+    print("o_ :", o_)
+    print("r :", r)
+    print(env.rect)
+    env.render()
+    time.sleep(1)
+
+    print('action_list', env.check_avaliable_action())
     o_, s_index, r, done = env.step(0)
     print("s_ :", s_index)
     print("o_ :", o_)
@@ -209,6 +225,7 @@ if __name__ == "__main__":
     env.render()
     time.sleep(1)
 
+    print('action_list', env.check_avaliable_action())
     o_, s_index, r, done = env.step(0)
     print("s_ :", s_index)
     print("o_ :", o_)
@@ -216,20 +233,7 @@ if __name__ == "__main__":
     env.render()
     time.sleep(1)
 
-    o_, s_index, r, done = env.step(0)
-    print("s_ :", s_index)
-    print("o_ :", o_)
-    print("r :", r)
-    env.render()
-    time.sleep(1)
-
-    o_, s_index, r, done = env.step(0)
-    print("s_ :", s_index)
-    print("o_ :", o_)
-    print("r :", r)
-    env.render()
-    time.sleep(1)
-
+    print('action_list', env.check_avaliable_action())
     o_, s_index, r, done = env.step(1)
     print("s_ :", s_index)
     print("o_ :", o_)
@@ -237,6 +241,7 @@ if __name__ == "__main__":
     env.render()
     time.sleep(1)
 
+    print('action_list', env.check_avaliable_action())
     o_, s_index, r, done = env.step(1)
     print("s_ :", s_index)
     print("o_ :", o_)
@@ -244,6 +249,15 @@ if __name__ == "__main__":
     env.render()
     time.sleep(1)
 
+    print('action_list', env.check_avaliable_action())
+    o_, s_index, r, done = env.step(1)
+    print("s_ :", s_index)
+    print("o_ :", o_)
+    print("r :", r)
+    env.render()
+    time.sleep(1)
+
+    print('action_list', env.check_avaliable_action())
     o_, s_index, r, done = env.step(2)
     print("s_ :", s_index)
     print("o_ :", o_)
@@ -251,6 +265,7 @@ if __name__ == "__main__":
     env.render()
     time.sleep(1)
 
+    print('action_list', env.check_avaliable_action())
     o_, s_index, r, done = env.step(2)
     print("s_ :", s_index)
     print("o_ :", o_)
@@ -258,6 +273,15 @@ if __name__ == "__main__":
     env.render()
     time.sleep(1)
 
+    print('action_list', env.check_avaliable_action())
+    o_, s_index, r, done = env.step(2)
+    print("s_ :", s_index)
+    print("o_ :", o_)
+    print("r :", r)
+    env.render()
+    time.sleep(1)
+
+    print('action_list', env.check_avaliable_action())
     o_, s_index, r, done = env.step(3)
     print("s_ :", s_index)
     print("o_ :", o_)

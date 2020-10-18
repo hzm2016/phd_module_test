@@ -76,16 +76,15 @@ def plt_state_action_arrow_value_table(state_value, value, name=None):
 	h = sns.heatmap(state_value, square=True, cmap='coolwarm',
 					cbar=True, annot=True, annot_kws={'size': 16}, ax=ax)
 
-	# plot q-value and action selection
-	# center_list = [[1.5, 1.5], [1.5, 2.5]]
-		# np.array([1.5, 1.5])
-
 	arrow_offset = 0.1
 	arrow_length = 0.25
 	text_offset = 0.35
 
-	for i in range(16):
-		center = np.array([i%4 + 0.5, i//4 + 0.5])
+	length = value.shape[0]
+	weight = state_value.shape[0]
+	height = state_value.shape[1]
+	for i in range(length):
+		center = np.array([i%weight + 0.5, i//height + 0.5])
 		# print("center ::", center)
 
 		# right
@@ -135,7 +134,7 @@ def comparision_performance(value_list=None,
 	plt.title(algorithm)
 
 	for index, reward in enumerate(value_list):
-		plt.plot(np.array(reward)[:300], label=para_name + '=' + str(label_list[index]))
+		plt.plot(np.array(reward), label=para_name + '=' + str(label_list[index]))
 
 	plt.xlabel('Episodes')
 	plt.ylabel(y_label_text)
